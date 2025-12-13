@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chirag Tank Portfolio - Next.js Version
+
+A modern, responsive portfolio website built with Next.js, React, and CSS. This is a conversion of the original HTML/CSS/JS portfolio to a Next.js application.
+
+## Features
+
+- **Responsive Design**: Optimized for all screen sizes, from mobile devices to desktops
+- **Smooth Animations**: Enhanced animations and transitions
+- **React Components**: Modular, reusable component architecture
+- **Form Validation**: Client-side form validation with React
+- **Dynamic Routing**: Dynamic project detail pages
+- **SEO Optimized**: Better meta tags and server-side rendering
+- **Performance**: Automatic code splitting and image optimization
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ installed
+- npm or yarn package manager
+
+### Installation
+
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Build for Production
 
-## Learn More
+```bash
+npm run build
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+portfolio-nextjs/
+├── components/          # React components
+│   ├── Header.js
+│   ├── Footer.js
+│   ├── Hero.js
+│   ├── About.js
+│   ├── Projects.js
+│   └── Contact.js
+├── pages/              # Next.js pages
+│   ├── _app.js         # App wrapper with global styles
+│   ├── index.js        # Home page
+│   └── projects/       # Project detail pages
+│       └── [slug].js   # Dynamic project pages
+├── public/             # Static assets
+│   └── assets/         # Images, icons, SVGs
+├── styles/             # CSS files
+│   ├── globals.css     # Global styles
+│   ├── style.css       # Main styles
+│   └── responsive.css  # Responsive styles
+└── next.config.js      # Next.js configuration
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technologies Used
 
-## Deploy on Vercel
+- **Next.js 16**: React framework with SSR
+- **React 19**: UI library
+- **CSS3**: Custom styling with animations
+- **Next/Image**: Optimized image loading
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project can be deployed on:
+- **Vercel** (recommended for Next.js)
+- **Netlify**
+- **Any Node.js hosting service**
+
+## Improvements Over Original
+
+1. ✅ Component-based architecture for better maintainability
+2. ✅ React hooks for state management
+3. ✅ Better form validation with React
+4. ✅ Dynamic routing for project pages
+5. ✅ Improved performance with Next.js optimizations
+6. ✅ Better SEO with proper meta tags
+7. ✅ Smooth scrolling and animations
+8. ✅ No jQuery dependency (pure React)
+
+## Contact
+
+- Email: chiragtank1971@gmail.com
+- LinkedIn: [Chirag Tank](https://www.linkedin.com/in/chirag-tank-72220919b/)
+- GitHub: [Chirag23Tank](https://github.com/Chirag23Tank)
+
+## License
+
+Copyright 2021. Made by Chirag Tank
