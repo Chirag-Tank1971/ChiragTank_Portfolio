@@ -5,14 +5,25 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Chirag Tank | Portfolio</title>
-        <meta name="description" content="Portfolio Template for Developer" />
+        <title>Chirag Tank | Full Stack Developer</title>
+        <meta name="description" content="Chirag Tank - Full-stack developer specializing in MERN, ASP.NET Core, REST APIs, Docker, CI/CD, and production LLM integrations (Gemini, OpenRouter). MCA (2026)." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/x-icon" href="/assets/Fevicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const theme = localStorage.getItem('portfolio-theme') || 
+                  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+              } catch (e) {}
+            `,
+          }}
+        />
       </Head>
       <Component {...pageProps} />
     </>
   );
 }
-

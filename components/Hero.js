@@ -1,127 +1,269 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
-export default function Hero() {
+export default function Hero({ onOpenResume }) {
+  const socials = [
+    {
+      name: 'GitHub',
+      url: 'https://github.com/Chirag-Tank1971',
+      icon: '/assets/png/github-ico.png'
+    },
+    {
+      name: 'LinkedIn',
+      url: 'https://linkedin.com/in/chirag-tank',
+      icon: '/assets/png/linkedin-ico.png'
+    },
+    {
+      name: 'Twitter',
+      url: 'https://x.com/ChiragT38130967',
+      icon: '/assets/png/twitter-ico.png'
+    }
+  ];
+
   return (
-    <section className="home-hero">
-      <div className="home-hero__content">
-        <h1 className="heading-primary">Hey, i&apos;m Chirag Tank</h1>
-        <div className="home-hero__info">
-          <p className="text-primary">
-            A Web Developer Crafting dynamic, responsive, and user-centric web applications with a seamless blend of front-end finesse and back-end robustness.
+    <section className="hero-section section-pad">
+      <div className="ambient-glow"></div>
+      <div className="ambient-glow-secondary"></div>
+
+      <div className="container hero-container">
+        <div className="hero-content">
+          <div className="status-pill">
+            <span className="pulse-dot"></span>
+            <span>Open to Remote Work &amp; Relocation</span>
+          </div>
+
+          <h1 className="hero-title">
+            Hey, I&apos;m <span className="gradient-text">Chirag Tank</span>
+          </h1>
+
+          <p className="hero-role">
+            Full Stack Developer &bull; MERN &amp; ASP.NET Core &bull; LLM Integration &bull; MCA (2026)
           </p>
+
+          <p className="hero-description">
+            Full-stack developer who has built and deployed MERN and ASP.NET Core applications, including an HR performance review system at Mintergraph and TaskFlow, an AI-assisted lead management platform. Experienced with REST API design, Docker, GitHub Actions CI/CD, and integrating LLM APIs (Gemini, OpenRouter) into production products.
+          </p>
+
+          <div className="hero-actions">
+            <a href="#projects" className="btn btn-primary">
+              <span>View Projects</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+
+            <a href="#contact" className="btn btn-secondary">
+              <span>Contact Me</span>
+            </a>
+
+            {onOpenResume && (
+              <button onClick={onOpenResume} className="btn btn-secondary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                <span>CV / Resume</span>
+              </button>
+            )}
+          </div>
+
+          {/* Social Links Row */}
+          <div className="hero-socials">
+            <span className="socials-label">Connect:</span>
+            <div className="socials-list">
+              {socials.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="social-pill"
+                  aria-label={social.name}
+                >
+                  <Image
+                    src={social.icon}
+                    alt={social.name}
+                    width={18}
+                    height={18}
+                  />
+                  <span>{social.name}</span>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="add">
-          <a href="#about" onClick={(e) => {
-            e.preventDefault();
-            const element = document.getElementById('about');
-            if (element) element.scrollIntoView({ behavior: 'smooth' });
-          }}>
-            <svg>
-              <use xlinkHref="#fileIcon"></use>
-            </svg>
-          </a>
-          <a href="#projects" onClick={(e) => {
-            e.preventDefault();
-            const element = document.getElementById('projects');
-            if (element) element.scrollIntoView({ behavior: 'smooth' });
-          }}>
-            <svg>
-              <use xlinkHref="#imageIcon"></use>
-            </svg>
-          </a>
-          <a href="#contact" onClick={(e) => {
-            e.preventDefault();
-            const element = document.getElementById('contact');
-            if (element) element.scrollIntoView({ behavior: 'smooth' });
-          }}>
-            <svg>
-              <use xlinkHref="#mailIcon"></use>
-            </svg>
-          </a>
-          <a href="#">
-          </a>
-        </div>
-        <svg xmlns="http://www.w3.org/2000/svg" style={{ display: 'none' }}>
-          <symbol xmlns="https://cdn.iconscout.com/icon/premium/png-512-thumb/svg-inkscape-file-document-extension-filetype-39849.png?f=webp&w=256" viewBox="0 0 24 24" id="fileIcon">
-            <path stroke="none" d="M14,0H3A1,1,0,0,0,2,1V23a1,1,0,0,0,1,1H21a1,1,0,0,0,1-1V8H15a1,1,0,0,1-1-1ZM5,17H19v2H5Zm0-5H19v2H5Zm6-3H5V7h6Z"></path>
-            <polygon stroke="none" points="21.414 6 16 6 16 0.586 21.414 6"></polygon>
-          </symbol>
-          <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="imageIcon">
-            <circle stroke="none" cx="9" cy="8" r="2"></circle>
-            <path stroke="none" d="M23,1H1C0.448,1,0,1.447,0,2v20c0,0.553,0.448,1,1,1h22c0.552,0,1-0.447,1-1V2C24,1.447,23.552,1,23,1z M22,3v12l-5-5l-6,7l-5-4l-4,4V3H22z"></path>
-          </symbol>
-          <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="mailIcon">
-            <path stroke="none" d="M21,2H3A3,3,0,0,0,0,5V19a3,3,0,0,0,3,3H21a3,3,0,0,0,3-3V5A3,3,0,0,0,21,2ZM8.207,15.207l-2.5,2.5a1,1,0,0,1-1.414-1.414l2.5-2.5Zm11.5,2.5a1,1,0,0,1-1.414,0l-2.5-2.5,1.414-1.414,2.5,2.5A1,1,0,0,1,19.707,17.707Zm0-10-7,7a1,1,0,0,1-1.414,0l-7-7A1,1,0,0,1,5.707,6.293L12,12.586l6.293-6.293a1,1,0,1,1,1.414,1.414Z"></path>
-          </symbol>
-        </svg>
-      </div>
-      <div className="home-hero__socials">
-        <div className="home-hero__social">
-          <a href="https://www.linkedin.com/in/chirag-tank-72220919b/" className="home-hero__social-icon-link" target="_blank" rel="noreferrer">
-            <Image
-              src="/assets/png/linkedin-ico.png"
-              alt="LinkedIn"
-              className="home-hero__social-icon"
-              width={28}
-              height={28}
-            />
-          </a>
-        </div>
-        <div className="home-hero__social">
-          <a href="https://x.com/ChiragT38130967" className="home-hero__social-icon-link" target="_blank" rel="noreferrer">
-            <Image
-              src="/assets/png/twitter-ico.png"
-              alt="Twitter"
-              className="home-hero__social-icon"
-              width={28}
-              height={28}
-            />
-          </a>
-        </div>
-        <div className="home-hero__social">
-          <a
-            href="https://www.instagram.com/chirag20_03/"
-            className="home-hero__social-icon-link home-hero__social-icon-link--bd-none"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Image
-              src="/assets/png/insta-ico.png"
-              alt="Instagram"
-              className="home-hero__social-icon"
-              width={28}
-              height={28}
-            />
-          </a>
-        </div>
-        <div className="home-hero__social">
-          <a href="https://dev.to/chirag_tank" className="home-hero__social-icon-link" target="_blank" rel="noreferrer">
-            <Image
-              src="/assets/png/icons8-book-50.png"
-              alt="Dev.to"
-              className="home-hero__social-icon"
-              width={28}
-              height={28}
-            />
-          </a>
-        </div>
-        <div className="home-hero__social">
-          <a href="https://github.com/Chirag23Tank" className="home-hero__social-icon-link" target="_blank" rel="noreferrer">
-            <Image
-              src="/assets/png/github-ico.png"
-              alt="GitHub"
-              className="home-hero__social-icon"
-              width={28}
-              height={28}
-            />
-          </a>
+
+        {/* Quick Highlights Bento Card */}
+        <div className="hero-stats-card bento-card">
+          <div className="stats-grid">
+            <div className="stat-item">
+              <span className="stat-number gradient-text">3+</span>
+              <span className="stat-label">Industry Roles</span>
+              <span className="stat-sub">Mintergraph &bull; Myna &bull; PSI</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-number gradient-text">~30%</span>
+              <span className="stat-label">DB Speedup</span>
+              <span className="stat-sub">Query &amp; EF Core Optimization</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-number gradient-text">60-80%</span>
+              <span className="stat-label">API Cost Cut</span>
+              <span className="stat-sub">TTL Cache &amp; Fallbacks</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-number gradient-text">MCA</span>
+              <span className="stat-label">Candidate &apos;26</span>
+              <span className="stat-sub">Sri Balaji College (Jaipur)</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="home-hero__mouse-scroll-cont">
-        <div className="mouse"></div>
-      </div>
+
+      <style jsx>{`
+        .hero-section {
+          padding-top: 14rem;
+          padding-bottom: 8rem;
+          min-height: 85vh;
+          display: flex;
+          align-items: center;
+          position: relative;
+        }
+        .hero-container {
+          display: grid;
+          grid-template-columns: 1.25fr 0.75fr;
+          gap: 4.8rem;
+          align-items: center;
+          position: relative;
+          z-index: 1;
+        }
+        .hero-content {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .hero-title {
+          font-size: 5.2rem;
+          font-weight: 800;
+          letter-spacing: -0.04em;
+          line-height: 1.15;
+          margin: 2.2rem 0 1.2rem;
+          color: var(--text-primary);
+        }
+        .hero-role {
+          font-size: 2rem;
+          font-weight: 600;
+          color: var(--text-secondary);
+          margin-bottom: 1.6rem;
+          line-height: 1.4;
+        }
+        .hero-description {
+          font-size: 1.55rem;
+          color: var(--text-muted);
+          line-height: 1.7;
+          max-width: 620px;
+          margin-bottom: 3.2rem;
+        }
+        .hero-actions {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1.4rem;
+          margin-bottom: 3.6rem;
+        }
+        .hero-socials {
+          display: flex;
+          align-items: center;
+          gap: 1.6rem;
+          flex-wrap: wrap;
+        }
+        .socials-label {
+          font-size: 1.3rem;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          color: var(--text-muted);
+          font-weight: 600;
+          font-family: 'JetBrains Mono', monospace;
+        }
+        .socials-list {
+          display: flex;
+          gap: 1rem;
+          flex-wrap: wrap;
+        }
+        .social-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.8rem;
+          padding: 0.6rem 1.4rem;
+          border-radius: 9999px;
+          background: var(--bg-card);
+          border: 1px solid var(--border-subtle);
+          font-size: 1.3rem;
+          font-weight: 500;
+          color: var(--text-secondary);
+          transition: all 0.2s ease;
+        }
+        .social-pill:hover {
+          color: var(--accent-primary);
+          border-color: var(--border-hover);
+          background: var(--bg-card-hover);
+          transform: translateY(-2px);
+        }
+        .hero-stats-card {
+          padding: 3.6rem;
+        }
+        .stats-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2.4rem;
+        }
+        .stat-item {
+          display: flex;
+          flex-direction: column;
+          gap: 0.4rem;
+        }
+        .stat-number {
+          font-size: 3.4rem;
+          font-weight: 800;
+          letter-spacing: -0.03em;
+          line-height: 1;
+        }
+        .stat-label {
+          font-size: 1.4rem;
+          color: var(--text-primary);
+          font-weight: 600;
+        }
+        .stat-sub {
+          font-size: 1.2rem;
+          color: var(--text-muted);
+        }
+        @media (max-width: 992px) {
+          .hero-container {
+            grid-template-columns: 1fr;
+            gap: 3.6rem;
+          }
+          .hero-title {
+            font-size: 4.2rem;
+          }
+          .hero-role {
+            font-size: 1.8rem;
+          }
+        }
+        @media (max-width: 580px) {
+          .hero-section {
+            padding-top: 11rem;
+          }
+          .hero-title {
+            font-size: 3.4rem;
+          }
+          .stats-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+          }
+        }
+      `}</style>
     </section>
   );
 }
-
