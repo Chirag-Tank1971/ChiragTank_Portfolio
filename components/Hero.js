@@ -1,22 +1,25 @@
-import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { GithubIcon, LinkedinIcon, TwitterIcon } from './Icons';
 
 export default function Hero({ onOpenResume }) {
   const socials = [
     {
       name: 'GitHub',
       url: 'https://github.com/Chirag-Tank1971',
-      icon: '/assets/png/github-ico.png'
+      id: 'github',
+      icon: <GithubIcon size={18} />
     },
     {
       name: 'LinkedIn',
       url: 'https://linkedin.com/in/chirag-tank',
-      icon: '/assets/png/linkedin-ico.png'
+      id: 'linkedin',
+      icon: <LinkedinIcon size={18} />
     },
     {
       name: 'Twitter',
       url: 'https://x.com/ChiragT38130967',
-      icon: '/assets/png/twitter-ico.png'
+      id: 'twitter',
+      icon: <TwitterIcon size={18} />
     }
   ];
 
@@ -91,24 +94,17 @@ export default function Hero({ onOpenResume }) {
             <span className="socials-label">Connect:</span>
             <div className="socials-list">
               {socials.map((social) => (
-                <motion.a
+                <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="social-pill"
+                  className={`social-pill ${social.id}`}
                   aria-label={social.name}
-                  whileHover={{ y: -3, scale: 1.05 }}
-                  whileTap={{ scale: 0.96 }}
                 >
-                  <Image
-                    src={social.icon}
-                    alt={social.name}
-                    width={18}
-                    height={18}
-                  />
+                  <span className="social-pill-icon">{social.icon}</span>
                   <span>{social.name}</span>
-                </motion.a>
+                </a>
               ))}
             </div>
           </div>
@@ -216,21 +212,47 @@ export default function Hero({ onOpenResume }) {
         .social-pill {
           display: inline-flex;
           align-items: center;
-          gap: 0.8rem;
-          padding: 0.6rem 1.4rem;
+          gap: 0.9rem;
+          padding: 0.75rem 1.6rem;
           border-radius: 9999px;
           background: var(--bg-card);
           border: 1px solid var(--border-subtle);
-          font-size: 1.3rem;
+          font-size: 1.35rem;
           font-weight: 500;
           color: var(--text-secondary);
-          transition: all 0.2s ease;
+          transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+          backdrop-filter: var(--glass-blur);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+          cursor: pointer;
         }
         .social-pill:hover {
-          color: var(--accent-primary);
+          color: var(--text-primary);
           border-color: var(--border-hover);
           background: var(--bg-card-hover);
-          transform: translateY(-2px);
+          transform: translateY(-2.5px);
+          box-shadow: 0 6px 18px rgba(99, 102, 241, 0.18);
+        }
+        .social-pill-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 18px;
+          height: 18px;
+          color: var(--text-secondary);
+          transition: color 0.2s ease, transform 0.2s ease;
+          flex-shrink: 0;
+        }
+        .social-pill:hover .social-pill-icon {
+          transform: scale(1.12);
+        }
+        .social-pill.github:hover .social-pill-icon {
+          color: #f0f6fc;
+        }
+        .social-pill.linkedin:hover .social-pill-icon {
+          color: #0a66c2;
+        }
+        .social-pill.twitter:hover .social-pill-icon {
+          color: #1d9bf0;
         }
         .hero-stats-card {
           padding: 3.6rem;

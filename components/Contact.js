@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import { GithubIcon, LinkedinIcon, TwitterIcon } from './Icons';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -126,39 +126,33 @@ export default function Contact() {
             <div className="connect-socials">
               <span className="socials-title">Follow &amp; Network:</span>
               <div className="social-links-row">
-                <motion.a
+                <a
                   href="https://github.com/Chirag-Tank1971"
                   target="_blank"
                   rel="noreferrer"
-                  className="social-icon-btn"
+                  className="social-icon-btn github"
                   aria-label="GitHub"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.94 }}
                 >
-                  <Image src="/assets/png/github-ico.png" alt="GitHub" width={20} height={20} />
-                </motion.a>
-                <motion.a
+                  <GithubIcon size={20} />
+                </a>
+                <a
                   href="https://linkedin.com/in/chirag-tank"
                   target="_blank"
                   rel="noreferrer"
-                  className="social-icon-btn"
+                  className="social-icon-btn linkedin"
                   aria-label="LinkedIn"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.94 }}
                 >
-                  <Image src="/assets/png/linkedin-ico.png" alt="LinkedIn" width={20} height={20} />
-                </motion.a>
-                <motion.a
+                  <LinkedinIcon size={20} />
+                </a>
+                <a
                   href="https://x.com/ChiragT38130967"
                   target="_blank"
                   rel="noreferrer"
-                  className="social-icon-btn"
+                  className="social-icon-btn twitter"
                   aria-label="Twitter"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.94 }}
                 >
-                  <Image src="/assets/png/twitter-ico.png" alt="Twitter" width={20} height={20} />
-                </motion.a>
+                  <TwitterIcon size={20} />
+                </a>
               </div>
             </div>
           </div>

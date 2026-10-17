@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { GithubIcon, LinkedinIcon, TwitterIcon, DevtoIcon } from './Icons';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -33,17 +33,17 @@ export default function Footer() {
           <div className="footer-socials">
             <span className="footer-heading">Social</span>
             <div className="footer-icons">
-              <a href="https://github.com/Chirag-Tank1971" target="_blank" rel="noreferrer" className="footer-icon-link" aria-label="GitHub">
-                <Image src="/assets/png/github-ico.png" alt="GitHub" width={18} height={18} />
+              <a href="https://github.com/Chirag-Tank1971" target="_blank" rel="noreferrer" className="footer-icon-link github" aria-label="GitHub">
+                <GithubIcon size={18} />
               </a>
-              <a href="https://linkedin.com/in/chirag-tank" target="_blank" rel="noreferrer" className="footer-icon-link" aria-label="LinkedIn">
-                <Image src="/assets/png/linkedin-ico.png" alt="LinkedIn" width={18} height={18} />
+              <a href="https://linkedin.com/in/chirag-tank" target="_blank" rel="noreferrer" className="footer-icon-link linkedin" aria-label="LinkedIn">
+                <LinkedinIcon size={18} />
               </a>
-              <a href="https://x.com/ChiragT38130967" target="_blank" rel="noreferrer" className="footer-icon-link" aria-label="Twitter">
-                <Image src="/assets/png/twitter-ico.png" alt="Twitter" width={18} height={18} />
+              <a href="https://x.com/ChiragT38130967" target="_blank" rel="noreferrer" className="footer-icon-link twitter" aria-label="Twitter">
+                <TwitterIcon size={18} />
               </a>
-              <a href="https://dev.to/chirag_tank" target="_blank" rel="noreferrer" className="footer-icon-link" aria-label="Dev.to">
-                <Image src="/assets/png/icons8-book-50.png" alt="Dev.to" width={18} height={18} />
+              <a href="https://dev.to/chirag_tank" target="_blank" rel="noreferrer" className="footer-icon-link devto" aria-label="Dev.to">
+                <DevtoIcon size={18} />
               </a>
             </div>
           </div>
