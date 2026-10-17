@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
@@ -41,7 +42,13 @@ export default function Projects() {
   return (
     <section id="projects" className="section-pad">
       <div className="container">
-        <div className="section-header">
+        <motion.div
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55 }}
+        >
           <span className="section-tag">Featured Work</span>
           <h2 className="section-title">
             Production &amp; <span className="gradient-text">Engineered Projects</span>
@@ -49,7 +56,7 @@ export default function Projects() {
           <p className="section-subtitle">
             Showcasing full-stack MERN platforms, automated trading bots, and enterprise web solutions with measurable performance.
           </p>
-        </div>
+        </motion.div>
 
         <div className="projects-grid">
           {projects.map((project, index) => (
@@ -80,9 +87,13 @@ export default function Projects() {
 
                 <div className="project-tags">
                   {project.tags.map((tag, tIdx) => (
-                    <span key={tIdx} className="tech-tag">
+                    <motion.span
+                      key={tIdx}
+                      className="tech-tag"
+                      whileHover={{ scale: 1.05 }}
+                    >
                       {tag}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
 

@@ -1,5 +1,7 @@
+import 'lenis/dist/lenis.css';
 import '../styles/globals.css';
 import Head from 'next/head';
+import SmoothScroll from '../components/SmoothScroll';
 
 export default function App({ Component, pageProps }) {
   return (
@@ -23,7 +25,9 @@ export default function App({ Component, pageProps }) {
           }}
         />
       </Head>
-      <Component {...pageProps} />
+      <SmoothScroll>
+        <Component {...pageProps} />
+      </SmoothScroll>
     </>
   );
 }

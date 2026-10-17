@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 
 export default function Header({ onOpenResume }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,6 +16,13 @@ export default function Header({ onOpenResume }) {
   });
   const [scrolled, setScrolled] = useState(false);
   const router = useRouter();
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 25,
+    restDelta: 0.001
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,24 +39,36 @@ export default function Header({ onOpenResume }) {
     localStorage.setItem('portfolio-theme', nextTheme);
   };
 
+  const scrollToElement = (targetId) => {
+    const el = document.getElementById(targetId);
+    if (!el) return;
+    if (typeof window !== 'undefined' && window.__lenis) {
+      window.__lenis.scrollTo(el, { offset: -70 });
+    } else {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     setIsMenuOpen(false);
     if (router.pathname !== '/') {
       router.push(`/#${targetId}`).then(() => {
-        setTimeout(() => {
-          const el = document.getElementById(targetId);
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }, 150);
+        setTimeout(() => scrollToElement(targetId), 200);
       });
     } else {
-      const el = document.getElementById(targetId);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      scrollToElement(targetId);
     }
   };
 
   return (
     <header className={`header ${scrolled ? 'header-scrolled' : ''}`}>
+      {/* Scroll Progress Bar */}
+      <motion.div
+        className="header-progress-bar"
+        style={{ scaleX }}
+      />
+
       <div className="container header-container">
         <Link href="/" className="logo">
           <span className="logo-badge">CT</span>
@@ -59,21 +79,17 @@ export default function Header({ onOpenResume }) {
 
         <nav className="nav-desktop">
           <ul className="nav-links">
-            <li>
-              <a href="#about" onClick={(e) => handleNavClick(e, 'about')}>About</a>
-            </li>
-            <li>
-              <a href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skills</a>
-            </li>
-            <li>
-              <a href="#journey" onClick={(e) => handleNavClick(e, 'journey')}>Journey</a>
-            </li>
-            <li>
-              <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</a>
-            </li>
-            <li>
-              <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a>
-            </li>
+            {['about', 'skills', 'journey', 'projects', 'contact'].map((item) => (
+              <li key={item}>
+                <a
+                  href={`#${item}`}
+                  onClick={(e) => handleNavClick(e, item)}
+                  style={{ textTransform: 'capitalize' }}
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
 
@@ -105,7 +121,10 @@ export default function Header({ onOpenResume }) {
           </button>
 
           {onOpenResume && (
-            <button onClick={onOpenResume} className="btn btn-secondary btn-sm resume-btn">
+            <button
+              onClick={onOpenResume}
+              className="btn btn-secondary btn-sm resume-btn"
+            >
               <span>Resume</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -137,36 +156,55 @@ export default function Header({ onOpenResume }) {
       </div>
 
       {/* Mobile Drawer */}
-      {isMenuOpen && (
-        <div className="mobile-menu">
-          <ul className="mobile-links">
-            <li>
-              <a href="#about" onClick={(e) => handleNavClick(e, 'about')}>About</a>
-            </li>
-            <li>
-              <a href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skills</a>
-            </li>
-            <li>
-              <a href="#journey" onClick={(e) => handleNavClick(e, 'journey')}>Journey</a>
-            </li>
-            <li>
-              <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</a>
-            </li>
-            <li>
-              <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a>
-            </li>
-            {onOpenResume && (
-              <li>
-                <button onClick={() => { setIsMenuOpen(false); onOpenResume(); }} className="btn btn-primary btn-sm" style={{ width: '100%' }}>
-                  View Resume
-                </button>
-              </li>
-            )}
-          </ul>
-        </div>
-      )}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            className="mobile-menu"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+          >
+            <ul className="mobile-links">
+              {['about', 'skills', 'journey', 'projects', 'contact'].map((item) => (
+                <li key={item}>
+                  <a
+                    href={`#${item}`}
+                    onClick={(e) => handleNavClick(e, item)}
+                    style={{ textTransform: 'capitalize' }}
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+              {onOpenResume && (
+                <li>
+                  <button
+                    onClick={() => { setIsMenuOpen(false); onOpenResume(); }}
+                    className="btn btn-primary btn-sm"
+                    style={{ width: '100%' }}
+                  >
+                    View Resume
+                  </button>
+                </li>
+              )}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <style jsx>{`
+        :global(.header-progress-bar) {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: var(--accent-gradient);
+          transform-origin: 0%;
+          z-index: 1000;
+          box-shadow: 0 0 10px rgba(99, 102, 241, 0.6);
+        }
         .header {
           position: fixed;
           top: 0;

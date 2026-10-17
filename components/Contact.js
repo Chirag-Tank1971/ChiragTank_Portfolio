@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -48,7 +49,13 @@ export default function Contact() {
   return (
     <section id="contact" className="section-pad">
       <div className="container">
-        <div className="section-header">
+        <motion.div
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55 }}
+        >
           <span className="section-tag">Get in Touch</span>
           <h2 className="section-title">
             Let&apos;s Build Something <span className="gradient-text">Impactful</span>
@@ -56,7 +63,7 @@ export default function Contact() {
           <p className="section-subtitle">
             Open to remote engineering roles, on-site relocation, and high-impact full-stack collaborations.
           </p>
-        </div>
+        </motion.div>
 
         <div className="contact-grid">
           {/* Contact Details Bento Card */}
@@ -67,7 +74,12 @@ export default function Contact() {
             </p>
 
             <div className="contact-methods">
-              <a href="mailto:chiragtank1971@gmail.com" className="method-item">
+              <motion.a
+                href="mailto:chiragtank1971@gmail.com"
+                className="method-item"
+                whileHover={{ x: 6 }}
+                transition={{ duration: 0.2 }}
+              >
                 <div className="method-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -78,9 +90,14 @@ export default function Contact() {
                   <div className="method-label">Direct Email</div>
                   <div className="method-value">chiragtank1971@gmail.com</div>
                 </div>
-              </a>
+              </motion.a>
 
-              <a href="tel:+916367583182" className="method-item">
+              <motion.a
+                href="tel:+916367583182"
+                className="method-item"
+                whileHover={{ x: 6 }}
+                transition={{ duration: 0.2 }}
+              >
                 <div className="method-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
@@ -90,7 +107,7 @@ export default function Contact() {
                   <div className="method-label">Phone</div>
                   <div className="method-value">+91-6367583182</div>
                 </div>
-              </a>
+              </motion.a>
 
               <div className="method-item">
                 <div className="method-icon">
@@ -109,15 +126,39 @@ export default function Contact() {
             <div className="connect-socials">
               <span className="socials-title">Follow &amp; Network:</span>
               <div className="social-links-row">
-                <a href="https://github.com/Chirag-Tank1971" target="_blank" rel="noreferrer" className="social-icon-btn" aria-label="GitHub">
+                <motion.a
+                  href="https://github.com/Chirag-Tank1971"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="social-icon-btn"
+                  aria-label="GitHub"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.94 }}
+                >
                   <Image src="/assets/png/github-ico.png" alt="GitHub" width={20} height={20} />
-                </a>
-                <a href="https://linkedin.com/in/chirag-tank" target="_blank" rel="noreferrer" className="social-icon-btn" aria-label="LinkedIn">
+                </motion.a>
+                <motion.a
+                  href="https://linkedin.com/in/chirag-tank"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="social-icon-btn"
+                  aria-label="LinkedIn"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.94 }}
+                >
                   <Image src="/assets/png/linkedin-ico.png" alt="LinkedIn" width={20} height={20} />
-                </a>
-                <a href="https://x.com/ChiragT38130967" target="_blank" rel="noreferrer" className="social-icon-btn" aria-label="Twitter">
+                </motion.a>
+                <motion.a
+                  href="https://x.com/ChiragT38130967"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="social-icon-btn"
+                  aria-label="Twitter"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.94 }}
+                >
                   <Image src="/assets/png/twitter-ico.png" alt="Twitter" width={20} height={20} />
-                </a>
+                </motion.a>
               </div>
             </div>
           </div>
@@ -125,11 +166,16 @@ export default function Contact() {
           {/* Form Bento Card */}
           <div className="bento-card contact-form-card">
             {submitted ? (
-              <div className="success-state">
+              <motion.div
+                className="success-state"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4 }}
+              >
                 <div className="success-icon">✓</div>
                 <h3>Message Sent!</h3>
                 <p>Thank you for reaching out. I will get back to you as soon as possible.</p>
-              </div>
+              </motion.div>
             ) : (
               <form
                 action="https://formsubmit.co/chiragtank1971@gmail.com"

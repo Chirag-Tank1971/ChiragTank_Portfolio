@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function Hero({ onOpenResume }) {
   const socials = [
@@ -44,20 +45,35 @@ export default function Hero({ onOpenResume }) {
           </p>
 
           <div className="hero-actions">
-            <a href="#projects" className="btn btn-primary">
+            <motion.a
+              href="#projects"
+              className="btn btn-primary"
+              whileHover={{ y: -3, scale: 1.02 }}
+              whileTap={{ scale: 0.96 }}
+            >
               <span>View Projects</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
-            </a>
+            </motion.a>
 
-            <a href="#contact" className="btn btn-secondary">
+            <motion.a
+              href="#contact"
+              className="btn btn-secondary"
+              whileHover={{ y: -3, scale: 1.02 }}
+              whileTap={{ scale: 0.96 }}
+            >
               <span>Contact Me</span>
-            </a>
+            </motion.a>
 
             {onOpenResume && (
-              <button onClick={onOpenResume} className="btn btn-secondary">
+              <motion.button
+                onClick={onOpenResume}
+                className="btn btn-secondary"
+                whileHover={{ y: -3, scale: 1.02 }}
+                whileTap={{ scale: 0.96 }}
+              >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                   <polyline points="14 2 14 8 20 8"></polyline>
@@ -66,7 +82,7 @@ export default function Hero({ onOpenResume }) {
                   <polyline points="10 9 9 9 8 9"></polyline>
                 </svg>
                 <span>CV / Resume</span>
-              </button>
+              </motion.button>
             )}
           </div>
 
@@ -75,13 +91,15 @@ export default function Hero({ onOpenResume }) {
             <span className="socials-label">Connect:</span>
             <div className="socials-list">
               {socials.map((social) => (
-                <a
+                <motion.a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noreferrer"
                   className="social-pill"
                   aria-label={social.name}
+                  whileHover={{ y: -3, scale: 1.05 }}
+                  whileTap={{ scale: 0.96 }}
                 >
                   <Image
                     src={social.icon}
@@ -90,14 +108,17 @@ export default function Hero({ onOpenResume }) {
                     height={18}
                   />
                   <span>{social.name}</span>
-                </a>
+                </motion.a>
               ))}
             </div>
           </div>
         </div>
 
         {/* Quick Highlights Bento Card */}
-        <div className="hero-stats-card bento-card">
+        <motion.div
+          className="hero-stats-card bento-card"
+          whileHover={{ y: -6 }}
+        >
           <div className="stats-grid">
             <div className="stat-item">
               <span className="stat-number gradient-text">3+</span>
@@ -120,7 +141,7 @@ export default function Hero({ onOpenResume }) {
               <span className="stat-sub">Sri Balaji College (Jaipur)</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <style jsx>{`

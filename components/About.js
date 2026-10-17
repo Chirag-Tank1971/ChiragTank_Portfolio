@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 export default function About() {
   const skillCategories = [
     {
@@ -68,7 +70,13 @@ export default function About() {
   return (
     <section id="about" className="section-pad">
       <div className="container">
-        <div className="section-header">
+        <motion.div
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        >
           <span className="section-tag">About &amp; Skills</span>
           <h2 className="section-title">
             Engineering High-Performance <span className="gradient-text">Full-Stack Solutions</span>
@@ -76,7 +84,7 @@ export default function About() {
           <p className="section-subtitle">
             Experienced with MERN and ASP.NET Core applications, REST API architecture, CI/CD pipelines, and integrating production LLM workflows.
           </p>
-        </div>
+        </motion.div>
 
         {/* Bento Grid */}
         <div className="bento-grid">
@@ -127,12 +135,19 @@ export default function About() {
 
         {/* Categorized Skills Section */}
         <div id="skills" className="skills-container">
-          <div className="section-header" style={{ marginBottom: '3.6rem', marginTop: '6rem' }}>
+          <motion.div
+            className="section-header"
+            style={{ marginBottom: '3.6rem', marginTop: '6rem' }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.55 }}
+          >
             <span className="section-tag">Technical Competencies</span>
             <h3 className="section-title" style={{ fontSize: '3rem' }}>
               Technical <span className="gradient-text">Skillset</span>
             </h3>
-          </div>
+          </motion.div>
 
           <div className="skills-grid">
             {skillCategories.map((category, index) => (
@@ -143,9 +158,13 @@ export default function About() {
                 </div>
                 <div className="category-pills">
                   {category.skills.map((skill, sIdx) => (
-                    <span key={sIdx} className="tech-tag">
+                    <motion.span
+                      key={sIdx}
+                      className="tech-tag"
+                      whileHover={{ scale: 1.05 }}
+                    >
                       {skill}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
               </div>

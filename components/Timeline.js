@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 export default function Timeline() {
   const milestones = [
     {
@@ -45,7 +47,13 @@ export default function Timeline() {
   return (
     <section id="journey" className="section-pad">
       <div className="container">
-        <div className="section-header">
+        <motion.div
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55 }}
+        >
           <span className="section-tag">Experience &amp; Education</span>
           <h2 className="section-title">
             Professional <span className="gradient-text">Journey Map</span>
@@ -53,7 +61,7 @@ export default function Timeline() {
           <p className="section-subtitle">
             My industry engineering roles, professional full-stack contracts, and formal Computer Science education.
           </p>
-        </div>
+        </motion.div>
 
         <div className="timeline-wrapper">
           <div className="timeline-line"></div>

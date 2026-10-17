@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ResumeModal({ isOpen, onClose }) {
   useEffect(() => {
@@ -17,18 +18,34 @@ export default function ResumeModal({ isOpen, onClose }) {
     };
   }, [isOpen, onClose]);
 
-  if (!isOpen) return null;
-
   return (
-    <div className="modal-overlay" onClick={onClose} role="dialog" aria-modal="true">
-      <div className="modal-content bento-card" onClick={(e) => e.stopPropagation()}>
-        <div className="modal-header">
-          <div>
-            <span className="section-tag">Resume / CV</span>
-            <h2 className="modal-title">CHIRAG TANK</h2>
-            <p className="modal-subtitle">
-              Full Stack Developer &bull; Rajasthan, India &bull; Open to remote work and relocation
-            </p>
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          className="modal-overlay"
+          onClick={onClose}
+          role="dialog"
+          aria-modal="true"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          <motion.div
+            className="modal-content bento-card"
+            onClick={(e) => e.stopPropagation()}
+            initial={{ opacity: 0, scale: 0.94, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.96, y: 15 }}
+            transition={{ type: 'spring', stiffness: 350, damping: 28 }}
+          >
+            <div className="modal-header">
+              <div>
+                <span className="section-tag">Resume / CV</span>
+                <h2 className="modal-title">CHIRAG TANK</h2>
+                <p className="modal-subtitle">
+                  Full Stack Developer &bull; Rajasthan, India &bull; Open to remote work and relocation
+                </p>
             <div className="contact-badges">
               <a href="mailto:chiragtank1971@gmail.com" className="badge-link">
                 chiragtank1971@gmail.com
@@ -205,7 +222,7 @@ export default function ResumeModal({ isOpen, onClose }) {
             Print / Save PDF
           </button>
         </div>
-      </div>
+      </motion.div>
 
       <style jsx>{`
         .modal-overlay {
@@ -383,6 +400,8 @@ export default function ResumeModal({ isOpen, onClose }) {
           to { opacity: 1; transform: scale(1); }
         }
       `}</style>
-    </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
