@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GithubIcon, LinkedinIcon, TwitterIcon } from './Icons';
+import SentAnimation from './SentAnimation';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -190,13 +191,22 @@ export default function Contact() {
             {submitted ? (
               <motion.div
                 className="success-state"
+                style={{ padding: '4rem 2rem', textAlign: 'center', width: '100%' }}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
               >
-                <div className="success-icon">✓</div>
-                <h3>Message Sent!</h3>
-                <p>Thank you for reaching out. I will get back to you as soon as possible.</p>
+                <SentAnimation />
+                <motion.div
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 2.9, duration: 0.5 }}
+                >
+                  <h3 style={{ textAlign: 'center' }}>Message Sent!</h3>
+                  <p style={{ textAlign: 'center', maxWidth: '38ch', margin: '0.8rem auto 0' }}>
+                    Thank you for reaching out. I will get back to you as soon as possible.
+                  </p>
+                </motion.div>
               </motion.div>
             ) : (
               <form
