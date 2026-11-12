@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(file *.png)",
+      "Bash(npm view *)",
+      "Bash(npx next *)",
+      "Bash(curl -s -i -X POST localhost:3000/api/contact -H \"Content-Type: application/json\" -d '{\"name\":\"Test\",\"email\":\"bad\",\"message\":\"x\"}')",
+      "Bash(curl -s -i -X POST localhost:3000/api/contact -H \"Content-Type: application/json\" -d '{\"name\":\"Test\",\"email\":\"test@example.com\",\"message\":\"API test from Claude Code\"}')",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_fill_form",
+      "mcp__plugin_playwright_playwright__browser_click",
+      "mcp__plugin_playwright_playwright__browser_network_requests",
+      "mcp__plugin_playwright_playwright__browser_evaluate"
+    ]
+  }
+}

@@ -10,32 +10,31 @@ import ResumeModal from '../../components/ResumeModal';
 const projectData = {
   taskflow: {
     title: 'TaskFlow',
-    subtitle: 'AI-Powered Lead & Call Management Platform',
-    description: 'An enterprise-scale platform for call-centre and sales teams featuring automated lead distribution, Google Gemini AI categorization with TTL caching (cutting redundant API calls by 60–80%), and a Chroma Cloud RAG knowledge base.',
+    subtitle: 'AI Task Management System',
+    description: 'A task-processing system with separate classification, routing and CSV/file-processing layers, using Google Gemini and a TTL cache that cuts redundant API calls by 60–80%.',
     liveLink: 'https://task-flow-five-snowy.vercel.app',
     codeLink: 'https://github.com/Chirag-Tank1971/TaskFlow',
-    image: '/assets/jpeg/Project-2.jpg',
+    image: '/assets/project_img/taskflow.png',
     paragraphs: [
-      'TaskFlow is a production-grade full-stack platform built for call-centre and sales teams to streamline customer outreach, lead management, and agent productivity. The system handles CSV and manual lead ingestion with automated distribution algorithms that route prospective leads across currently available sales agents, call outcome logging, callback scheduling, manager dashboards, and fine-grained role-based access control.',
-      'Integrated with Google Gemini LLM to automatically analyze, summarize, and categorize incoming leads into key buckets (Sales, Billing, Technical, Support, Urgent, General). To optimize resource utilization and maintain low latency, a smart TTL cache was engineered that reduced redundant API calls by 60–80%, complete with exponential backoff retries and model fallback on overload or quota limitations.',
-      'Engineered an intelligent Retrieval-Augmented Generation (RAG) knowledge base leveraging Chroma Cloud Vector Database, empowering sales agents to query internal company documentation with instant grounded citations during live calls. All document revisions and data mutations are tracked with an immutable audit trail.',
-      'Secured using HTTP-only cookie-based sessions, rate limiting, and defensive input validation. Deployed seamlessly across Vercel and Render using Docker containers, backed by an automated GitHub Actions CI/CD pipeline executing unit testing with Jest, pytest, and API verification via Postman and Swagger.'
+      'TaskFlow is an AI task management system built around a task-processing pipeline with separate classification, routing and CSV/file-processing layers, so new task types can be added without changing the rest of the system.',
+      'It uses the Google Gemini API for classification. A TTL-based caching layer, keyed on request parameters and checked before external calls, cut redundant Gemini API calls by 60–80%.',
+      'The backend is secured with JWT authentication and rate limiting, and supports bulk operations that split large CSV datasets into independently processed batches to avoid timeouts.',
+      'The frontend is deployed on Vercel and the Dockerised backend on Render, with a GitHub Actions CI/CD pipeline that builds, tests (Jest) and deploys on every push and pull request.'
     ],
-    tools: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Google Gemini API', 'Chroma Cloud (RAG)', 'Docker', 'GitHub Actions (CI/CD)', 'Jest', 'Postman']
+    tools: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Google Gemini API', 'JWT', 'Docker', 'GitHub Actions (CI/CD)', 'Jest', 'Vercel', 'Render']
   },
   'binance-bot': {
     title: 'Binance Futures Trading Bot',
     subtitle: 'High-Performance Algorithmic Order Execution Service',
-    description: 'A robust FastAPI trading service on the Binance Futures Testnet with MARKET and LIMIT order execution, real-time account and order tracking, structured error handling, and pytest-validated test suites.',
-    liveLink: null,
-    codeLink: 'https://github.com/Chirag-Tank1971',
-    image: '/assets/jpeg/Project-1.jpg',
+    description: 'A FastAPI trading bot on the Binance Futures Testnet with MARKET and LIMIT order execution, structured error handling and logging, tested with pytest.',
+    liveLink: 'https://frontend-tawny-zeta-56.vercel.app/',
+    codeLink: 'https://github.com/Chirag-Tank1971/Tradingbot',
+    image: '/assets/project_img/tradingbot.png',
     paragraphs: [
-      'An asynchronous algorithmic trading bot developed in Python with FastAPI, engineered to execute high-frequency order operations on the Binance Futures Testnet via the python-binance SDK.',
-      'Features comprehensive order execution routines supporting both MARKET and LIMIT orders, precision position sizing, leverage calculation, account balance synchronization, and real-time open order tracking with millisecond-level reaction times.',
-      'Architected with structured hierarchical error handling to manage exchange disconnection, margin call notifications, and rate-limiting throttling. Validated through automated test suites using pytest, along with interactive API documentation powered by OpenAPI/Swagger and Postman collections.'
+      'A trading bot built in Python with FastAPI on the Binance Futures Testnet, using the python-binance library.',
+      'It supports MARKET and LIMIT order execution, with structured error handling and logging, and is tested with pytest.'
     ],
-    tools: ['Python', 'FastAPI', 'python-binance', 'Binance Futures Testnet', 'pytest', 'Swagger / OpenAPI', 'Postman', 'REST APIs']
+    tools: ['Python', 'FastAPI', 'python-binance', 'Binance Futures Testnet', 'pytest', 'REST APIs']
   },
   swiftmart: {
     title: 'SwiftMart',
@@ -43,7 +42,7 @@ const projectData = {
     description: 'A scalable e-commerce frontend architecture engineered with React, Redux Toolkit, and Tailwind CSS. Built to deliver sub-second product browsing, reactive state management, and fluid shopping cart interactions.',
     liveLink: 'https://ecommerce-website-kr4b.vercel.app/',
     codeLink: 'https://github.com/Chirag-Tank1971/Ecommerce_website.git',
-    image: '/assets/jpeg/Project-3.jpg',
+    image: '/assets/project_img/swiftmart.png',
     paragraphs: [
       'SwiftMart is a modern e-commerce website developed using React.js, designed to provide users with a smooth and responsive shopping experience. The platform features essential functionalities such as dynamic product listings, a shopping cart, and user authentication. React\'s component-based architecture was leveraged to build reusable UI elements, while state management tools ensured seamless user interactions across the site.',
       'The responsive design, developed with Tailwind CSS, ensures that SwiftMart performs well on both desktop and mobile devices. This project showcases strong front-end development skills and a clear understanding of building scalable, real-world web applications.'

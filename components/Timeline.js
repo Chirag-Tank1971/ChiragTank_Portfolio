@@ -7,15 +7,15 @@ export default function Timeline() {
       title: 'Full Stack Developer',
       organization: 'Mintergraph • Jaipur, Rajasthan',
       type: 'Experience',
-      description: 'Building a production full-stack HR Quarterly Review & Appraisal System on the MERN stack with multi-role workflows for admins, managers, and employees. Implementing KRA (Key Result Area)-based scoring to standardize and automate quarterly performance evaluations across cross-functional teams.',
-      tags: ['MERN Stack', 'React.js', 'Node.js', 'Express.js', 'MongoDB', 'RBAC', 'HR Platform']
+      description: 'Digitising government records in Hindi, Urdu and Kaithi: evaluated 8+ OCR engines and vision-language models (PaddleOCR, IndicOCR, GLM-OCR, Qwen3-VL, Gemma, Gemini), designed a two-stage IndicOCR region-detection + VLM parsing pipeline, ran open-weight VLMs locally on an NVIDIA DGX Spark (GB10) against paid APIs, and fine-tuned Kraken handwriting models using eScriptorium and Transkribus. Also building a MERN-stack HR Quarterly Review & Appraisal System with multi-role workflows and KRA-based scoring.',
+      tags: ['OCR/HTR', 'Vision-Language Models', 'IndicOCR', 'Kraken', 'NVIDIA DGX Spark', 'MERN Stack', 'KRA Scoring']
     },
     {
       period: 'Oct 2025 — Jan 2026',
       title: 'Associate Full Stack Developer (Contract)',
       organization: 'Myna Solutions • Hyderabad, India (Remote)',
       type: 'Experience',
-      description: 'Fixed-term contract to build an online tutoring platform end-to-end with personalized learning paths and real-time progress tracking for students and tutors. Engineered responsive React and Tailwind CSS interfaces integrated with REST APIs, AWS S3 storage, and WebSocket-based live sessions for real-time tutoring.',
+      description: 'Fixed-term contract to build an AI-powered online tutoring platform end-to-end with React and Node.js, including personalised learning paths and real-time progress tracking for students and tutors. Delivered live tutoring sessions over WebSockets, with AWS S3 for content storage and RESTful APIs behind a responsive React and Tailwind CSS interface.',
       tags: ['React.js', 'Node.js', 'WebSockets', 'AWS S3', 'Tailwind CSS', 'REST APIs']
     },
     {
@@ -23,7 +23,7 @@ export default function Timeline() {
       title: '.NET Full Stack Developer Intern',
       organization: 'Pratham Software (PSI) • Jaipur, Rajasthan',
       type: 'Experience',
-      description: 'Developed a social media platform using ASP.NET Core, C#, SQL Server, and Angular following N-tier enterprise architecture. Designed database schemas and data access layers with Entity Framework Core, improving query performance by ~30%. Integrated the OpenRouter API to build an AI chat feature alongside real-time messaging.',
+      description: 'Developed a social media platform using ASP.NET Core, C#, SQL Server, and Angular following N-tier enterprise architecture. Designed database schemas and data access layers with Entity Framework Core, improving query performance by ~30%. Integrated an AI-powered chat feature into the platform using the OpenRouter API.',
       tags: ['ASP.NET Core', 'C#', 'SQL Server', 'Angular', 'Entity Framework Core', 'OpenRouter AI']
     },
     {

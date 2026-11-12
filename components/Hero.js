@@ -40,11 +40,11 @@ export default function Hero({ onOpenResume }) {
           </h1>
 
           <p className="hero-role">
-            Full Stack Developer &bull; MERN &amp; ASP.NET Core &bull; LLM Integration &bull; MCA (2026)
+            Full Stack Developer &bull; AI &amp; LLM Integration &bull; OCR / Vision-Language Models
           </p>
 
           <p className="hero-description">
-            Full-stack developer who has built and deployed MERN and ASP.NET Core applications, including an HR performance review system at Mintergraph and TaskFlow, an AI-assisted lead management platform. Experienced with REST API design, Docker, GitHub Actions CI/CD, and integrating LLM APIs (Gemini, OpenRouter) into production products.
+            Full-stack developer (MERN, ASP.NET Core, Python) with hands-on experience evaluating, fine-tuning and deploying OCR and vision-language models on NVIDIA GPU hardware for multilingual document digitisation in Hindi, Urdu and Kaithi. Experienced in building web platforms across HR tech, ed-tech and social media, and in integrating LLM APIs for task classification and routing.
           </p>
 
           <div className="hero-actions">

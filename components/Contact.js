@@ -10,6 +10,8 @@ export default function Contact() {
   });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState('');
 
   const validateEmail = (email) => {
     const re = /^([a-zA-Z0-9_\-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9-]+\.)+))([a-zA-Z]{2,5}|[0-9]{1,3})(\]?)$/;
@@ -30,7 +32,8 @@ export default function Contact() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const newErrors = {};
     if (!formData.name.trim()) newErrors.name = 'Full name is required';
     if (!formData.email.trim() || !validateEmail(formData.email)) {
@@ -39,11 +42,36 @@ export default function Contact() {
     if (!formData.message.trim()) newErrors.message = 'Message cannot be empty';
 
     if (Object.keys(newErrors).length > 0) {
-      e.preventDefault();
       setErrors(newErrors);
       return;
     }
-    setSubmitted(true);
+
+    // Honeypot: bots fill hidden fields, humans don't.
+    if (e.target.elements._honey && e.target.elements._honey.value) return;
+
+    setSending(true);
+    setSendError('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _honey: e.target.elements._honey ? e.target.elements._honey.value : ''
+        })
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'Request failed');
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setSendError('Could not send your message. Please try again, or email me directly at chiragtank1971@gmail.com.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -172,11 +200,18 @@ export default function Contact() {
               </motion.div>
             ) : (
               <form
-                action="https://formsubmit.co/chiragtank1971@gmail.com"
-                method="POST"
                 onSubmit={handleSubmit}
                 className="contact-form"
+                noValidate
               >
+                <input
+                  type="text"
+                  name="_honey"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, width: 0 }}
+                />
                 <div className="form-group">
                   <label htmlFor="name" className="form-label">Full Name</label>
                   <input
@@ -222,8 +257,10 @@ export default function Contact() {
                   {errors.message && <span className="error-message">{errors.message}</span>}
                 </div>
 
-                <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
-                  <span>Send Message</span>
+                {sendError && <span className="error-message">{sendError}</span>}
+
+                <button type="submit" className="btn btn-primary" style={{ width: '100%' }} disabled={sending}>
+                  <span>{sending ? 'Sending...' : 'Send Message'}</span>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="22" y1="2" x2="11" y2="13"></line>
                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>

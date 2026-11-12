@@ -6,31 +6,31 @@ const projects = [
   {
     id: 'taskflow',
     title: 'TaskFlow',
-    subtitle: 'AI-Powered Lead & Call Management Platform',
-    description: 'Built a full-stack platform for call-centre and sales teams with automated lead distribution, Gemini lead categorization (60-80% API call reduction via TTL caching), Chroma Cloud RAG document QA, cookie-based sessions, Docker, and GitHub Actions CI/CD.',
-    image: '/assets/jpeg/Project-2.jpg',
+    subtitle: 'AI Task Management System',
+    description: 'A task-processing pipeline with separate classification, routing and CSV/file-processing layers, a TTL cache that cuts redundant Gemini API calls by 60–80%, JWT authentication, rate limiting, and a Dockerised backend deployed via GitHub Actions CI/CD.',
+    image: '/assets/project_img/taskflow.png',
     liveLink: 'https://task-flow-five-snowy.vercel.app',
     codeLink: 'https://github.com/Chirag-Tank1971/TaskFlow',
     link: '/projects/taskflow',
-    tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Google Gemini', 'Chroma Cloud', 'Docker', 'CI/CD']
+    tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Google Gemini', 'JWT', 'Docker', 'CI/CD']
   },
   {
     id: 'binance-bot',
     title: 'Binance Futures Trading Bot',
     subtitle: 'High-Performance Algorithmic Execution Service',
-    description: 'A FastAPI trading bot engineered on the Binance Futures Testnet supporting MARKET and LIMIT order execution, real-time account and order tracking, structured error handling, and robust logging validated with pytest and Swagger.',
-    image: '/assets/jpeg/Project-1.jpg',
-    liveLink: null,
-    codeLink: 'https://github.com/Chirag-Tank1971',
+    description: 'A FastAPI trading bot engineered on the Binance Futures Testnet supporting MARKET and LIMIT order execution, structured error handling and logging, tested with pytest.',
+    image: '/assets/project_img/tradingbot.png',
+    liveLink: 'https://frontend-tawny-zeta-56.vercel.app/',
+    codeLink: 'https://github.com/Chirag-Tank1971/Tradingbot',
     link: '/projects/binance-bot',
-    tags: ['Python', 'FastAPI', 'python-binance', 'pytest', 'REST APIs', 'Swagger', 'Postman']
+    tags: ['Python', 'FastAPI', 'python-binance', 'pytest', 'REST APIs']
   },
   {
     id: 'swiftmart',
     title: 'SwiftMart E-Commerce',
     subtitle: 'Modern Responsive Shopping Platform',
     description: 'A scalable e-commerce application developed with React.js, Redux Toolkit, and Tailwind CSS. Features real-time search, category filtering, a reactive shopping cart, and secure checkout architecture.',
-    image: '/assets/jpeg/Project-3.jpg',
+    image: '/assets/project_img/swiftmart.png',
     liveLink: 'https://ecommerce-website-kr4b.vercel.app/',
     codeLink: 'https://github.com/Chirag-Tank1971/Ecommerce_website.git',
     link: '/projects/swiftmart',
@@ -144,11 +144,11 @@ export default function Projects() {
       <style jsx>{`
         .projects-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
           gap: 3.2rem;
         }
         .project-card {
-          padding: 2.4rem;
+          padding: 1.6rem 1.6rem 2.4rem;
           display: flex;
           flex-direction: column;
           height: 100%;
@@ -156,7 +156,7 @@ export default function Projects() {
         .project-image-wrapper {
           position: relative;
           width: 100%;
-          height: 230px;
+          aspect-ratio: 1917 / 870;
           border-radius: 1.6rem;
           overflow: hidden;
           background: rgba(0, 0, 0, 0.2);
@@ -166,10 +166,11 @@ export default function Projects() {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          object-position: center;
           transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .project-card:hover :global(.project-image) {
-          transform: scale(1.06);
+          transform: scale(1.03);
         }
         .project-image-overlay {
           position: absolute;
@@ -242,9 +243,6 @@ export default function Projects() {
         @media (max-width: 480px) {
           .projects-grid {
             grid-template-columns: 1fr;
-          }
-          .project-image-wrapper {
-            height: 190px;
           }
         }
       `}</style>

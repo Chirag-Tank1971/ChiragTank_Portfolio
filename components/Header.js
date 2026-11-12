@@ -5,15 +5,14 @@ import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 
 export default function Header({ onOpenResume }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return (
-        localStorage.getItem('portfolio-theme') ||
-        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-      );
-    }
-    return 'dark';
-  });
+  // Start with the server default and sync from the real theme after mount,
+  // so server and client markup match during hydration.
+  const [theme, setTheme] = useState('dark');
+
+  useEffect(() => {
+    const current = document.documentElement.getAttribute('data-theme');
+    if (current === 'light' || current === 'dark') setTheme(current);
+  }, []);
   const [scrolled, setScrolled] = useState(false);
   const router = useRouter();
 

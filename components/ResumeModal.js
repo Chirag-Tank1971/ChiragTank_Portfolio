@@ -77,7 +77,7 @@ export default function ResumeModal({ isOpen, onClose }) {
           <div className="resume-section">
             <h3 className="resume-section-title">Summary</h3>
             <p className="resume-text">
-              Full-stack developer who has built and deployed MERN and ASP.NET Core applications, including a multi-role HR performance review platform at Mintergraph and TaskFlow, an AI-assisted lead management platform. Improved database query performance by ~30% and cut redundant API calls by 60–80% through TTL caching. Experienced with REST API design, Docker, and GitHub Actions CI/CD, and with integrating LLM APIs (Gemini, OpenRouter) into products. MCA (2026).
+              Full-stack developer (MERN, ASP.NET Core, Python) with hands-on experience evaluating, fine-tuning and deploying OCR and vision-language models on NVIDIA GPU hardware for multilingual document digitisation in Hindi, Urdu and Kaithi. Experienced in building web platforms across HR tech, ed-tech and social media, and in integrating LLM APIs for task classification and routing.
             </p>
           </div>
 
@@ -86,25 +86,25 @@ export default function ResumeModal({ isOpen, onClose }) {
             <h3 className="resume-section-title">Technical Skills</h3>
             <div className="resume-skills-grid">
               <div>
-                <strong>Languages:</strong> JavaScript (ES6+), TypeScript, Python, C#, HTML5, CSS3
+                <strong>Languages:</strong> JavaScript (ES6+), TypeScript, Python, C#
               </div>
               <div>
                 <strong>Frontend:</strong> React.js, Angular, Tailwind CSS
               </div>
               <div>
-                <strong>Backend:</strong> Node.js, Express.js, ASP.NET Core, FastAPI, REST APIs, WebSockets
+                <strong>Backend:</strong> Node.js, Express.js, ASP.NET Core, FastAPI, REST APIs, WebSockets, JWT Authentication
               </div>
               <div>
-                <strong>Databases:</strong> MongoDB, SQL Server, PostgreSQL
+                <strong>AI/ML &amp; LLM:</strong> OCR/HTR, Vision-Language Models (Qwen-VL, Gemma, Gemini), PaddleOCR, IndicOCR, Kraken, eScriptorium, Transkribus, Model Fine-Tuning, Model Evaluation &amp; Benchmarking, Local VLM Deployment (NVIDIA DGX Spark), Google Gemini API, OpenRouter
+              </div>
+              <div>
+                <strong>Databases:</strong> MongoDB, SQL Server, Entity Framework Core
+              </div>
+              <div>
+                <strong>Testing &amp; API Tools:</strong> Jest, pytest, Postman, Swagger
               </div>
               <div>
                 <strong>Cloud &amp; DevOps:</strong> Docker, GitHub Actions (CI/CD), AWS S3, Vercel, Render, Git
-              </div>
-              <div>
-                <strong>AI &amp; LLM:</strong> Google Gemini API, OpenRouter, RAG, Vector Database (Chroma Cloud), Prompt Engineering
-              </div>
-              <div>
-                <strong>Testing:</strong> Jest, pytest, Postman, Swagger
               </div>
             </div>
           </div>
@@ -118,9 +118,17 @@ export default function ResumeModal({ isOpen, onClose }) {
                   <strong>Full Stack Developer — Mintergraph</strong>
                   <span className="exp-date">Sept 2026 – Present | Jaipur, Rajasthan</span>
                 </div>
+                <p className="project-sublinks"><strong>Document Digitisation (OCR/HTR) for Government Records</strong></p>
                 <ul className="resume-list">
-                  <li>Building a full-stack HR Quarterly Review &amp; Appraisal System on the MERN stack, with multi-role workflows for admins, managers, and employees.</li>
-                  <li>Implementing KRA (Key Result Area)-based scoring to standardize and automate quarterly performance evaluations across teams.</li>
+                  <li>Evaluated 8+ OCR engines and vision-language models, including PaddleOCR, IndicOCR, GLM-OCR, Qwen3-VL, Gemma and Gemini, for text extraction from thousands of government documents in Hindi, Urdu and Kaithi script.</li>
+                  <li>Designed a two-stage pipeline using IndicOCR for region detection followed by VLM parsing of each region.</li>
+                  <li>Deployed and ran open-weight VLMs locally on an NVIDIA DGX Spark (GB10), comparing them against paid APIs on accuracy, speed and cost.</li>
+                  <li>Fine-tuned handwriting recognition models with Kraken on character, word, sentence and paragraph-level datasets, using eScriptorium and Transkribus for annotation and transcription.</li>
+                </ul>
+                <p className="project-sublinks"><strong>HR Quarterly Review &amp; Appraisal System</strong></p>
+                <ul className="resume-list">
+                  <li>Building a MERN-stack appraisal platform with multi-role workflows for admins, managers and employees.</li>
+                  <li>Implemented KRA-based scoring to standardise and automate quarterly performance evaluations across teams.</li>
                 </ul>
               </div>
 
@@ -130,8 +138,8 @@ export default function ResumeModal({ isOpen, onClose }) {
                   <span className="exp-date">Oct 2025 – Jan 2026 | Hyderabad, India (Remote)</span>
                 </div>
                 <ul className="resume-list">
-                  <li>Developed an online tutoring platform with personalized learning paths and real-time progress tracking for students and tutors, using React and Node.js.</li>
-                  <li>Built responsive React and Tailwind CSS interfaces integrated with REST APIs, AWS S3 storage, and WebSocket-based live sessions for real-time tutoring.</li>
+                  <li>Built an AI-powered online tutoring platform end-to-end with React and Node.js, including personalised learning paths and real-time progress tracking for students and tutors.</li>
+                  <li>Delivered live tutoring sessions over WebSockets, with AWS S3 for content storage and RESTful APIs behind a responsive React and Tailwind CSS interface.</li>
                 </ul>
               </div>
 
@@ -143,7 +151,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                 <ul className="resume-list">
                   <li>Developed a social media platform using ASP.NET Core, C#, SQL Server, and Angular, following N-tier architecture.</li>
                   <li>Designed database schemas and data access layers with Entity Framework Core, improving query performance by ~30%.</li>
-                  <li>Integrated the OpenRouter API to add an AI chat feature alongside real-time user-to-user messaging.</li>
+                  <li>Integrated an AI-powered chat feature into the platform using the OpenRouter API.</li>
                 </ul>
               </div>
             </div>
@@ -155,17 +163,17 @@ export default function ResumeModal({ isOpen, onClose }) {
             <div className="experience-items">
               <div className="exp-item">
                 <div className="exp-header">
-                  <strong>TaskFlow – AI-Powered Lead &amp; Call Management Platform</strong>
-                  <span className="exp-tags">React, Node.js, Express, MongoDB, Gemini, Chroma</span>
+                  <strong>TaskFlow – AI Task Management System</strong>
+                  <span className="exp-tags">React.js, Express.js, Node.js, MongoDB, Google Gemini API</span>
                 </div>
                 <p className="project-sublinks">
                   Live demo: <a href="https://task-flow-five-snowy.vercel.app" target="_blank" rel="noreferrer">task-flow-five-snowy.vercel.app</a> | GitHub: <a href="https://github.com/Chirag-Tank1971/TaskFlow" target="_blank" rel="noreferrer">github.com/Chirag-Tank1971/TaskFlow</a>
                 </p>
                 <ul className="resume-list">
-                  <li>Built a full-stack platform for call-centre and sales teams: CSV/manual lead import, automatic distribution across available agents, call outcome logging, callback scheduling, manager dashboards, and RBAC.</li>
-                  <li>Integrated Google Gemini to categorize leads; a TTL cache cut redundant API calls by 60–80%, with retry and model fallback on overload or quota errors.</li>
-                  <li>Added a RAG knowledge base on Chroma Cloud that answers agents&apos; questions from company documents with citations, plus full audit trails.</li>
-                  <li>Secured with cookie-based sessions, rate limiting, and input validation; CI/CD pipeline via GitHub Actions on Vercel and Render with Docker.</li>
+                  <li>Built a task-processing pipeline with separate classification, routing and CSV/file-processing layers, so new task types can be added without changing the rest of the system.</li>
+                  <li>Implemented a TTL-based caching layer keyed on request parameters and checked before external calls, cutting redundant Gemini API calls by 60–80%.</li>
+                  <li>Added JWT authentication, rate limiting and bulk operations that split large CSV datasets into independently processed batches to avoid timeouts.</li>
+                  <li>Deployed the frontend on Vercel and the Dockerised backend on Render, with a GitHub Actions CI/CD pipeline that builds, tests (Jest) and deploys on every push and pull request.</li>
                 </ul>
               </div>
 
@@ -175,7 +183,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                   <span className="exp-tags">Python, FastAPI, python-binance</span>
                 </div>
                 <ul className="resume-list">
-                  <li>Built a FastAPI trading bot on the Binance Futures Testnet with MARKET/LIMIT order execution, account and order management, structured error handling, and logging; tested with pytest, Postman, and Swagger.</li>
+                  <li>Built a FastAPI trading bot on the Binance Futures Testnet with MARKET and LIMIT order execution, structured error handling and logging, tested with pytest.</li>
                 </ul>
               </div>
             </div>
@@ -190,7 +198,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                   <strong>Master of Computer Applications (MCA)</strong>
                   <span className="exp-date">2024 – 2026</span>
                 </div>
-                <p className="exp-school">Sri Balaji College of Engineering and Technology, Jaipur</p>
+                <p className="exp-school">Sri Balaji College of Engineering and Technology, Jaipur, Rajasthan</p>
               </div>
               <div className="exp-item">
                 <div className="exp-header">

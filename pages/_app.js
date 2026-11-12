@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <title>Chirag Tank | Full Stack Developer</title>
-        <meta name="description" content="Chirag Tank - Full-stack developer specializing in MERN, ASP.NET Core, REST APIs, Docker, CI/CD, and production LLM integrations (Gemini, OpenRouter). MCA (2026)." />
+        <meta name="description" content="Chirag Tank - Full-stack developer (MERN, ASP.NET Core, Python) with hands-on OCR and vision-language model experience for multilingual document digitisation, and LLM API integration." />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
@@ -16,17 +16,6 @@ export default function App({ Component, pageProps }) {
         <link rel="apple-touch-icon" href="/assets/Fevicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                const theme = localStorage.getItem('portfolio-theme') || 
-                  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-                document.documentElement.setAttribute('data-theme', theme);
-              } catch (e) {}
-            `,
-          }}
-        />
       </Head>
       <SmoothScroll>
         <Component {...pageProps} />

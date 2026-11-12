@@ -10,7 +10,7 @@ export default function About() {
           <polyline points="8 6 2 12 8 18"></polyline>
         </svg>
       ),
-      skills: ['JavaScript (ES6+)', 'TypeScript', 'Python', 'C#', 'HTML5', 'CSS3']
+      skills: ['JavaScript (ES6+)', 'TypeScript', 'Python', 'C#']
     },
     {
       title: 'Frontend Development',
@@ -21,7 +21,7 @@ export default function About() {
           <line x1="12" y1="17" x2="12" y2="21"></line>
         </svg>
       ),
-      skills: ['React.js', 'Angular', 'Tailwind CSS', 'Redux', 'Responsive UI']
+      skills: ['React.js', 'Angular', 'Tailwind CSS']
     },
     {
       title: 'Backend & Systems',
@@ -33,7 +33,7 @@ export default function About() {
           <line x1="6" y1="18" x2="6.01" y2="18"></line>
         </svg>
       ),
-      skills: ['Node.js', 'Express.js', 'ASP.NET Core', 'FastAPI', 'REST APIs', 'WebSockets']
+      skills: ['Node.js', 'Express.js', 'ASP.NET Core', 'FastAPI', 'REST APIs', 'WebSockets', 'JWT Authentication']
     },
     {
       title: 'Databases & Storage',
@@ -44,20 +44,19 @@ export default function About() {
           <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
         </svg>
       ),
-      skills: ['MongoDB', 'SQL Server', 'PostgreSQL', 'Entity Framework Core']
+      skills: ['MongoDB', 'SQL Server', 'Entity Framework Core']
     },
     {
-      title: 'AI & LLM Integration',
+      title: 'AI/ML & LLM',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
         </svg>
       ),
-      skills: ['Google Gemini API', 'OpenRouter', 'RAG Architecture', 'Vector DB (Chroma Cloud)', 'Prompt Engineering']
+      skills: ['OCR/HTR', 'Vision-Language Models (Qwen-VL, Gemma, Gemini)', 'PaddleOCR', 'IndicOCR', 'Kraken', 'eScriptorium', 'Transkribus', 'Model Fine-Tuning', 'Model Evaluation & Benchmarking', 'Local VLM Deployment (NVIDIA DGX Spark)', 'Google Gemini API', 'OpenRouter']
     },
     {
-      title: 'Cloud, DevOps & Testing',
-      icon: (
+      title: 'Cloud, DevOps & Testing',      icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="3"></circle>
           <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
@@ -82,7 +81,7 @@ export default function About() {
             Engineering High-Performance <span className="gradient-text">Full-Stack Solutions</span>
           </h2>
           <p className="section-subtitle">
-            Experienced with MERN and ASP.NET Core applications, REST API architecture, CI/CD pipelines, and integrating production LLM workflows.
+            Full-stack development with MERN, ASP.NET Core and Python, plus hands-on OCR and vision-language model work for multilingual document digitisation.
           </p>
         </motion.div>
 
@@ -93,10 +92,10 @@ export default function About() {
             <div className="card-badge">Summary &bull; MCA (2026)</div>
             <h3 className="card-title">Chirag Tank — Full Stack Developer</h3>
             <p className="bio-para">
-              I am a <strong>Full-Stack Developer</strong> based in <strong>Rajasthan, India</strong>, experienced in building and deploying production-scale <strong>MERN</strong> and <strong>ASP.NET Core</strong> systems, including multi-role HR performance platforms and AI-assisted lead management systems.
+              I am a <strong>Full-Stack Developer</strong> based in <strong>Jaipur, Rajasthan</strong> (MERN, ASP.NET Core, Python) with hands-on experience evaluating, fine-tuning and deploying <strong>OCR and vision-language models</strong> on NVIDIA GPU hardware for multilingual document digitisation in Hindi, Urdu and Kaithi.
             </p>
             <p className="bio-para">
-              Proven track record in engineering high-efficiency applications: improved database query performance by <strong>~30%</strong> with Entity Framework Core and slashed redundant API calls by <strong>60–80%</strong> through TTL caching. Experienced with Docker, GitHub Actions CI/CD, and integrating modern LLMs (Google Gemini, OpenRouter) and RAG vector search into real-world workflows.
+              I have built web platforms across HR tech, ed-tech and social media, improved database query performance by <strong>~30%</strong> with Entity Framework Core, and cut redundant Gemini API calls by <strong>60–80%</strong> through TTL caching. I also integrate LLM APIs for task classification and routing.
             </p>
             <div className="bio-cta">
               <a href="#contact" className="btn btn-primary btn-sm">
@@ -121,6 +120,12 @@ export default function About() {
                 <span className="principle-dot"></span>
                 <div>
                   <strong>~30% Query Speedup:</strong> Schema redesign and EF Core optimization across SQL Server and MongoDB.
+                </div>
+              </li>
+              <li>
+                <span className="principle-dot"></span>
+                <div>
+                  <strong>8+ OCR/VLM Models Benchmarked:</strong> Compared open-weight models on an NVIDIA DGX Spark against paid APIs on accuracy, speed and cost.
                 </div>
               </li>
               <li>

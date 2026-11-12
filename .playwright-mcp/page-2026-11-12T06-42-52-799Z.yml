@@ -1,0 +1,434 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "CT Chirag Tank." [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e6]: CT
+        - generic [ref=e7]: Chirag Tank.
+      - navigation [ref=e8]:
+        - list [ref=e9]:
+          - listitem [ref=e10]:
+            - link "about" [ref=e11] [cursor=pointer]:
+              - /url: "#about"
+          - listitem [ref=e12]:
+            - link "skills" [ref=e13] [cursor=pointer]:
+              - /url: "#skills"
+          - listitem [ref=e14]:
+            - link "journey" [ref=e15] [cursor=pointer]:
+              - /url: "#journey"
+          - listitem [ref=e16]:
+            - link "projects" [ref=e17] [cursor=pointer]:
+              - /url: "#projects"
+          - listitem [ref=e18]:
+            - link "contact" [ref=e19] [cursor=pointer]:
+              - /url: "#contact"
+      - generic [ref=e20]:
+        - button "Switch to light mode" [ref=e21] [cursor=pointer]
+        - button "Resume" [ref=e28] [cursor=pointer]
+  - main [ref=e34]:
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - generic [ref=e38]: Open to Remote Work & Relocation
+        - heading "Hey, I'm Chirag Tank" [level=1] [ref=e41]:
+          - text: Hey, I'm
+          - generic [ref=e42]: Chirag Tank
+        - paragraph [ref=e43]: Full Stack Developer • AI & LLM Integration • OCR / Vision-Language Models
+        - paragraph [ref=e44]: Full-stack developer (MERN, ASP.NET Core, Python) with hands-on experience evaluating, fine-tuning and deploying OCR and vision-language models on NVIDIA GPU hardware for multilingual document digitisation in Hindi, Urdu and Kaithi. Experienced in building web platforms across HR tech, ed-tech and social media, and in integrating LLM APIs for task classification and routing.
+        - generic [ref=e45]:
+          - link "View Projects" [ref=e46] [cursor=pointer]:
+            - /url: "#projects"
+          - link "Contact Me" [ref=e50] [cursor=pointer]:
+            - /url: "#contact"
+          - button "CV / Resume" [ref=e52] [cursor=pointer]
+        - generic [ref=e57]:
+          - generic [ref=e58]: "Connect:"
+          - generic [ref=e59]:
+            - link "GitHub" [ref=e60] [cursor=pointer]:
+              - /url: https://github.com/Chirag-Tank1971
+            - link "LinkedIn" [ref=e65] [cursor=pointer]:
+              - /url: https://linkedin.com/in/chirag-tank
+            - link "Twitter" [ref=e70] [cursor=pointer]:
+              - /url: https://x.com/ChiragT38130967
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - generic [ref=e78]: 3+
+          - generic [ref=e79]: Industry Roles
+          - generic [ref=e80]: Mintergraph • Myna • PSI
+        - generic [ref=e81]:
+          - generic [ref=e82]: ~30%
+          - generic [ref=e83]: DB Speedup
+          - generic [ref=e84]: Query & EF Core Optimization
+        - generic [ref=e85]:
+          - generic [ref=e86]: 60-80%
+          - generic [ref=e87]: API Cost Cut
+          - generic [ref=e88]: TTL Cache & Fallbacks
+        - generic [ref=e89]:
+          - generic [ref=e90]: MCA
+          - generic [ref=e91]: Candidate '26
+          - generic [ref=e92]: Sri Balaji College (Jaipur)
+    - generic [ref=e94]:
+      - generic [ref=e95]:
+        - generic [ref=e96]: About & Skills
+        - heading "Engineering High-Performance Full-Stack Solutions" [level=2] [ref=e97]:
+          - text: Engineering High-Performance
+          - generic [ref=e98]: Full-Stack Solutions
+        - paragraph [ref=e99]: Full-stack development with MERN, ASP.NET Core and Python, plus hands-on OCR and vision-language model work for multilingual document digitisation.
+      - generic [ref=e100]:
+        - generic [ref=e101]:
+          - generic [ref=e102]: Summary • MCA (2026)
+          - heading "Chirag Tank — Full Stack Developer" [level=3] [ref=e103]
+          - paragraph [ref=e104]:
+            - text: I am a
+            - strong [ref=e105]: Full-Stack Developer
+            - text: based in
+            - strong [ref=e106]: Jaipur, Rajasthan
+            - text: (MERN, ASP.NET Core, Python) with hands-on experience evaluating, fine-tuning and deploying
+            - strong [ref=e107]: OCR and vision-language models
+            - text: on NVIDIA GPU hardware for multilingual document digitisation in Hindi, Urdu and Kaithi.
+          - paragraph [ref=e108]:
+            - text: I have built web platforms across HR tech, ed-tech and social media, improved database query performance by
+            - strong [ref=e109]: ~30%
+            - text: with Entity Framework Core, and cut redundant Gemini API calls by
+            - strong [ref=e110]: 60–80%
+            - text: through TTL caching. I also integrate LLM APIs for task classification and routing.
+          - generic [ref=e111]:
+            - link "Get In Touch" [ref=e112] [cursor=pointer]:
+              - /url: "#contact"
+            - generic [ref=e113]: 📍 Rajasthan, India • Open to Remote & Relocation
+        - generic [ref=e114]:
+          - generic [ref=e115]: Engineering Highlights
+          - heading "Key Impacts" [level=3] [ref=e116]
+          - list [ref=e117]:
+            - listitem [ref=e118]:
+              - generic [ref=e120]:
+                - strong [ref=e121]: "60–80% API Cost Cut:"
+                - text: Implemented smart TTL caching and fallback systems for LLM API integrations.
+            - listitem [ref=e122]:
+              - generic [ref=e124]:
+                - strong [ref=e125]: "~30% Query Speedup:"
+                - text: Schema redesign and EF Core optimization across SQL Server and MongoDB.
+            - listitem [ref=e126]:
+              - generic [ref=e128]:
+                - strong [ref=e129]: "8+ OCR/VLM Models Benchmarked:"
+                - text: Compared open-weight models on an NVIDIA DGX Spark against paid APIs on accuracy, speed and cost.
+            - listitem [ref=e130]:
+              - generic [ref=e132]:
+                - strong [ref=e133]: "CI/CD & Testing:"
+                - text: Automated GitHub Actions pipelines, Docker containerization, Jest and pytest testing.
+      - generic [ref=e134]:
+        - generic [ref=e135]:
+          - generic [ref=e136]: Technical Competencies
+          - heading "Technical Skillset" [level=3] [ref=e137]:
+            - text: Technical
+            - generic [ref=e138]: Skillset
+        - generic [ref=e139]:
+          - generic [ref=e140]:
+            - heading "Programming Languages" [level=4] [ref=e146]
+            - generic [ref=e147]:
+              - generic [ref=e148]: JavaScript (ES6+)
+              - generic [ref=e149]: TypeScript
+              - generic [ref=e150]: Python
+              - generic [ref=e151]: C#
+          - generic [ref=e152]:
+            - heading "Frontend Development" [level=4] [ref=e157]
+            - generic [ref=e158]:
+              - generic [ref=e159]: React.js
+              - generic [ref=e160]: Angular
+              - generic [ref=e161]: Tailwind CSS
+          - generic [ref=e162]:
+            - heading "Backend & Systems" [level=4] [ref=e168]
+            - generic [ref=e169]:
+              - generic [ref=e170]: Node.js
+              - generic [ref=e171]: Express.js
+              - generic [ref=e172]: ASP.NET Core
+              - generic [ref=e173]: FastAPI
+              - generic [ref=e174]: REST APIs
+              - generic [ref=e175]: WebSockets
+              - generic [ref=e176]: JWT Authentication
+          - generic [ref=e177]:
+            - heading "Databases & Storage" [level=4] [ref=e184]
+            - generic [ref=e185]:
+              - generic [ref=e186]: MongoDB
+              - generic [ref=e187]: SQL Server
+              - generic [ref=e188]: Entity Framework Core
+          - generic [ref=e189]:
+            - heading "AI/ML & LLM" [level=4] [ref=e194]
+            - generic [ref=e195]:
+              - generic [ref=e196]: OCR/HTR
+              - generic [ref=e197]: Vision-Language Models (Qwen-VL, Gemma, Gemini)
+              - generic [ref=e198]: PaddleOCR
+              - generic [ref=e199]: IndicOCR
+              - generic [ref=e200]: Kraken
+              - generic [ref=e201]: eScriptorium
+              - generic [ref=e202]: Transkribus
+              - generic [ref=e203]: Model Fine-Tuning
+              - generic [ref=e204]: Model Evaluation & Benchmarking
+              - generic [ref=e205]: Local VLM Deployment (NVIDIA DGX Spark)
+              - generic [ref=e206]: Google Gemini API
+              - generic [ref=e207]: OpenRouter
+          - generic [ref=e208]:
+            - heading "Cloud, DevOps & Testing" [level=4] [ref=e214]
+            - generic [ref=e215]:
+              - generic [ref=e216]: Docker
+              - generic [ref=e217]: GitHub Actions (CI/CD)
+              - generic [ref=e218]: AWS S3
+              - generic [ref=e219]: Vercel
+              - generic [ref=e220]: Render
+              - generic [ref=e221]: Jest
+              - generic [ref=e222]: pytest
+              - generic [ref=e223]: Postman
+              - generic [ref=e224]: Swagger
+    - generic [ref=e226]:
+      - generic [ref=e227]:
+        - generic [ref=e228]: Experience & Education
+        - heading "Professional Journey Map" [level=2] [ref=e229]:
+          - text: Professional
+          - generic [ref=e230]: Journey Map
+        - paragraph [ref=e231]: My industry engineering roles, professional full-stack contracts, and formal Computer Science education.
+      - generic [ref=e234]:
+        - generic [ref=e238]:
+          - generic [ref=e239]:
+            - generic [ref=e240]: Sept 2026 — Present
+            - generic [ref=e241]: Experience
+          - heading "Full Stack Developer" [level=3] [ref=e242]
+          - generic [ref=e243]: Mintergraph • Jaipur, Rajasthan
+          - paragraph [ref=e244]: "Digitising government records in Hindi, Urdu and Kaithi: evaluated 8+ OCR engines and vision-language models (PaddleOCR, IndicOCR, GLM-OCR, Qwen3-VL, Gemma, Gemini), designed a two-stage IndicOCR region-detection + VLM parsing pipeline, ran open-weight VLMs locally on an NVIDIA DGX Spark (GB10) against paid APIs, and fine-tuned Kraken handwriting models using eScriptorium and Transkribus. Also building a MERN-stack HR Quarterly Review & Appraisal System with multi-role workflows and KRA-based scoring."
+          - generic [ref=e245]:
+            - generic [ref=e246]: OCR/HTR
+            - generic [ref=e247]: Vision-Language Models
+            - generic [ref=e248]: IndicOCR
+            - generic [ref=e249]: Kraken
+            - generic [ref=e250]: NVIDIA DGX Spark
+            - generic [ref=e251]: MERN Stack
+            - generic [ref=e252]: KRA Scoring
+        - generic [ref=e256]:
+          - generic [ref=e257]:
+            - generic [ref=e258]: Oct 2025 — Jan 2026
+            - generic [ref=e259]: Experience
+          - heading "Associate Full Stack Developer (Contract)" [level=3] [ref=e260]
+          - generic [ref=e261]: Myna Solutions • Hyderabad, India (Remote)
+          - paragraph [ref=e262]: Fixed-term contract to build an AI-powered online tutoring platform end-to-end with React and Node.js, including personalised learning paths and real-time progress tracking for students and tutors. Delivered live tutoring sessions over WebSockets, with AWS S3 for content storage and RESTful APIs behind a responsive React and Tailwind CSS interface.
+          - generic [ref=e263]:
+            - generic [ref=e264]: React.js
+            - generic [ref=e265]: Node.js
+            - generic [ref=e266]: WebSockets
+            - generic [ref=e267]: AWS S3
+            - generic [ref=e268]: Tailwind CSS
+            - generic [ref=e269]: REST APIs
+        - generic [ref=e273]:
+          - generic [ref=e274]:
+            - generic [ref=e275]: May 2025 — Aug 2025
+            - generic [ref=e276]: Experience
+          - heading ".NET Full Stack Developer Intern" [level=3] [ref=e277]
+          - generic [ref=e278]: Pratham Software (PSI) • Jaipur, Rajasthan
+          - paragraph [ref=e279]: Developed a social media platform using ASP.NET Core, C#, SQL Server, and Angular following N-tier enterprise architecture. Designed database schemas and data access layers with Entity Framework Core, improving query performance by ~30%. Integrated an AI-powered chat feature into the platform using the OpenRouter API.
+          - generic [ref=e280]:
+            - generic [ref=e281]: ASP.NET Core
+            - generic [ref=e282]: C#
+            - generic [ref=e283]: SQL Server
+            - generic [ref=e284]: Angular
+            - generic [ref=e285]: Entity Framework Core
+            - generic [ref=e286]: OpenRouter AI
+        - generic [ref=e290]:
+          - generic [ref=e291]:
+            - generic [ref=e292]: 2024 — 2026
+            - generic [ref=e293]: Education
+          - heading "Master of Computer Applications (MCA)" [level=3] [ref=e294]
+          - generic [ref=e295]: Sri Balaji College of Engineering and Technology, Jaipur
+          - paragraph [ref=e296]: Advanced coursework in Cloud Architecture, Database Systems, Advanced Software Engineering, Distributed Systems, and AI & Machine Learning applications.
+          - generic [ref=e297]:
+            - generic [ref=e298]: MCA
+            - generic [ref=e299]: Cloud Architecture
+            - generic [ref=e300]: Distributed Systems
+            - generic [ref=e301]: Advanced Database Design
+        - generic [ref=e305]:
+          - generic [ref=e306]:
+            - generic [ref=e307]: 2021 — 2024
+            - generic [ref=e308]: Education
+          - heading "Bachelor of Computer Applications (BCA)" [level=3] [ref=e309]
+          - generic [ref=e310]: Sri Balaji College of Engineering and Technology, Jaipur
+          - paragraph [ref=e311]: Foundations in Data Structures, Object-Oriented Programming (C++, Java, C#), Web Development, Operating Systems, Computer Networks, and Software Testing.
+          - generic [ref=e312]:
+            - generic [ref=e313]: BCA
+            - generic [ref=e314]: Data Structures
+            - generic [ref=e315]: OOP
+            - generic [ref=e316]: C++
+            - generic [ref=e317]: C#
+            - generic [ref=e318]: DBMS
+    - generic [ref=e320]:
+      - generic [ref=e321]:
+        - generic [ref=e322]: Featured Work
+        - heading "Production & Engineered Projects" [level=2] [ref=e323]:
+          - text: Production &
+          - generic [ref=e324]: Engineered Projects
+        - paragraph [ref=e325]: Showcasing full-stack MERN platforms, automated trading bots, and enterprise web solutions with measurable performance.
+      - generic [ref=e326]:
+        - generic [ref=e327]:
+          - generic [ref=e328]:
+            - img "TaskFlow" [ref=e329]
+            - generic [ref=e331]: Live Demo
+          - generic [ref=e334]:
+            - generic [ref=e335]:
+              - generic [ref=e336]: "01"
+              - generic [ref=e337]: AI Task Management System
+            - heading "TaskFlow" [level=3] [ref=e338]
+            - paragraph [ref=e339]: A task-processing pipeline with separate classification, routing and CSV/file-processing layers, a TTL cache that cuts redundant Gemini API calls by 60–80%, JWT authentication, rate limiting, and a Dockerised backend deployed via GitHub Actions CI/CD.
+            - generic [ref=e340]:
+              - generic [ref=e341]: React
+              - generic [ref=e342]: Node.js
+              - generic [ref=e343]: Express
+              - generic [ref=e344]: MongoDB
+              - generic [ref=e345]: Google Gemini
+              - generic [ref=e346]: JWT
+              - generic [ref=e347]: Docker
+              - generic [ref=e348]: CI/CD
+            - generic [ref=e349]:
+              - link "Case Study" [ref=e350] [cursor=pointer]:
+                - /url: /projects/taskflow
+              - link "Live Demo" [ref=e354] [cursor=pointer]:
+                - /url: https://task-flow-five-snowy.vercel.app
+              - link "GitHub Repository" [ref=e360] [cursor=pointer]:
+                - /url: https://github.com/Chirag-Tank1971/TaskFlow
+                - generic [ref=e363]: Code
+        - generic [ref=e364]:
+          - generic [ref=e365]:
+            - img "Binance Futures Trading Bot" [ref=e366]
+            - generic [ref=e368]: Live Demo
+          - generic [ref=e371]:
+            - generic [ref=e372]:
+              - generic [ref=e373]: "02"
+              - generic [ref=e374]: High-Performance Algorithmic Execution Service
+            - heading "Binance Futures Trading Bot" [level=3] [ref=e375]
+            - paragraph [ref=e376]: A FastAPI trading bot engineered on the Binance Futures Testnet supporting MARKET and LIMIT order execution, structured error handling and logging, tested with pytest.
+            - generic [ref=e377]:
+              - generic [ref=e378]: Python
+              - generic [ref=e379]: FastAPI
+              - generic [ref=e380]: python-binance
+              - generic [ref=e381]: pytest
+              - generic [ref=e382]: REST APIs
+            - generic [ref=e383]:
+              - link "Case Study" [ref=e384] [cursor=pointer]:
+                - /url: /projects/binance-bot
+              - link "Live Demo" [ref=e388] [cursor=pointer]:
+                - /url: https://frontend-tawny-zeta-56.vercel.app/
+              - link "GitHub Repository" [ref=e394] [cursor=pointer]:
+                - /url: https://github.com/Chirag-Tank1971/Tradingbot
+                - generic [ref=e397]: Code
+        - generic [ref=e398]:
+          - generic [ref=e399]:
+            - img "SwiftMart E-Commerce" [ref=e400]
+            - generic [ref=e402]: Live Demo
+          - generic [ref=e405]:
+            - generic [ref=e406]:
+              - generic [ref=e407]: "03"
+              - generic [ref=e408]: Modern Responsive Shopping Platform
+            - heading "SwiftMart E-Commerce" [level=3] [ref=e409]
+            - paragraph [ref=e410]: A scalable e-commerce application developed with React.js, Redux Toolkit, and Tailwind CSS. Features real-time search, category filtering, a reactive shopping cart, and secure checkout architecture.
+            - generic [ref=e411]:
+              - generic [ref=e412]: React.js
+              - generic [ref=e413]: Redux
+              - generic [ref=e414]: Tailwind CSS
+              - generic [ref=e415]: JavaScript
+              - generic [ref=e416]: REST APIs
+              - generic [ref=e417]: Vercel
+            - generic [ref=e418]:
+              - link "Case Study" [ref=e419] [cursor=pointer]:
+                - /url: /projects/swiftmart
+              - link "Live Demo" [ref=e423] [cursor=pointer]:
+                - /url: https://ecommerce-website-kr4b.vercel.app/
+              - link "GitHub Repository" [ref=e429] [cursor=pointer]:
+                - /url: https://github.com/Chirag-Tank1971/Ecommerce_website.git
+                - generic [ref=e432]: Code
+    - generic [ref=e434]:
+      - generic [ref=e435]:
+        - generic [ref=e436]: Get in Touch
+        - heading "Let's Build Something Impactful" [level=2] [ref=e437]:
+          - text: Let's Build Something
+          - generic [ref=e438]: Impactful
+        - paragraph [ref=e439]: Open to remote engineering roles, on-site relocation, and high-impact full-stack collaborations.
+      - generic [ref=e440]:
+        - generic [ref=e441]:
+          - heading "Contact Information" [level=3] [ref=e442]
+          - paragraph [ref=e443]: Currently available for full-time Full Stack Developer roles. Feel free to connect directly via email, phone, or LinkedIn.
+          - generic [ref=e444]:
+            - link "Direct Email chiragtank1971@gmail.com" [ref=e445] [cursor=pointer]:
+              - /url: mailto:chiragtank1971@gmail.com
+              - generic [ref=e450]:
+                - generic [ref=e451]: Direct Email
+                - generic [ref=e452]: chiragtank1971@gmail.com
+            - link "Phone +91-6367583182" [ref=e453] [cursor=pointer]:
+              - /url: tel:+916367583182
+              - generic [ref=e457]:
+                - generic [ref=e458]: Phone
+                - generic [ref=e459]: +91-6367583182
+            - generic [ref=e465]:
+              - generic [ref=e466]: Location & Availability
+              - generic [ref=e467]: Rajasthan, India • Remote / Relocation
+          - generic [ref=e468]:
+            - generic [ref=e469]: "Follow & Network:"
+            - generic [ref=e470]:
+              - link "GitHub" [ref=e471] [cursor=pointer]:
+                - /url: https://github.com/Chirag-Tank1971
+              - link "LinkedIn" [ref=e474] [cursor=pointer]:
+                - /url: https://linkedin.com/in/chirag-tank
+              - link "Twitter" [ref=e477] [cursor=pointer]:
+                - /url: https://x.com/ChiragT38130967
+        - generic [ref=e481]:
+          - textbox [aria-hidden] [ref=e482]
+          - generic [ref=e483]:
+            - generic [ref=e484]: Full Name
+            - textbox "Full Name" [ref=e485]:
+              - /placeholder: e.g. Alex Johnson
+          - generic [ref=e486]:
+            - generic [ref=e487]: Email Address
+            - textbox "Email Address" [ref=e488]:
+              - /placeholder: alex@example.com
+          - generic [ref=e489]:
+            - generic [ref=e490]: Your Message
+            - textbox "Your Message" [ref=e491]:
+              - /placeholder: Tell me about your project, team, or opportunity...
+          - button "Send Message" [ref=e492] [cursor=pointer]
+  - contentinfo [ref=e497]:
+    - generic [ref=e498]:
+      - generic [ref=e499]:
+        - generic [ref=e500]:
+          - generic [ref=e501]:
+            - generic [ref=e502]: CT
+            - generic [ref=e503]: Chirag Tank
+          - paragraph [ref=e504]: Full-Stack Web Developer crafting modern, resilient digital products. Based in Jaipur, India.
+        - generic [ref=e505]:
+          - generic [ref=e506]: Navigation
+          - list [ref=e507]:
+            - listitem [ref=e508]:
+              - link "About" [ref=e509] [cursor=pointer]:
+                - /url: "#about"
+            - listitem [ref=e510]:
+              - link "Skills" [ref=e511] [cursor=pointer]:
+                - /url: "#skills"
+            - listitem [ref=e512]:
+              - link "Journey" [ref=e513] [cursor=pointer]:
+                - /url: "#journey"
+            - listitem [ref=e514]:
+              - link "Projects" [ref=e515] [cursor=pointer]:
+                - /url: "#projects"
+            - listitem [ref=e516]:
+              - link "Contact" [ref=e517] [cursor=pointer]:
+                - /url: "#contact"
+        - generic [ref=e518]:
+          - generic [ref=e519]: Social
+          - generic [ref=e520]:
+            - link "GitHub" [ref=e521] [cursor=pointer]:
+              - /url: https://github.com/Chirag-Tank1971
+            - link "LinkedIn" [ref=e524] [cursor=pointer]:
+              - /url: https://linkedin.com/in/chirag-tank
+            - link "Twitter" [ref=e527] [cursor=pointer]:
+              - /url: https://x.com/ChiragT38130967
+            - link "Dev.to" [ref=e530] [cursor=pointer]:
+              - /url: https://dev.to/chirag_tank
+      - generic [ref=e533]:
+        - paragraph [ref=e534]:
+          - text: © 2026 Designed & Engineered by
+          - link "Chirag Tank" [ref=e535] [cursor=pointer]:
+            - /url: https://github.com/Chirag-Tank1971
+        - button "Back to top" [ref=e536] [cursor=pointer]:
+          - generic [ref=e537]: Back to Top
