@@ -80,34 +80,29 @@ export default function Contact() {
       <div className="container">
         <motion.div
           className="section-header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.55 }}
+          transition={{ duration: 0.5 }}
         >
-          <span className="section-tag">Get in Touch</span>
-          <h2 className="section-title">
-            Let&apos;s Build Something <span className="gradient-text">Impactful</span>
-          </h2>
+          <h2 className="section-title">Contact</h2>
           <p className="section-subtitle">
-            Open to remote engineering roles, on-site relocation, and high-impact full-stack collaborations.
+            I am looking for full-time full-stack roles, remote or with relocation. Write to me and I will reply by email.
           </p>
         </motion.div>
 
         <div className="contact-grid">
           {/* Contact Details Bento Card */}
           <div className="bento-card contact-info-card">
-            <h3 className="info-title">Contact Information</h3>
+            <h3 className="info-title">Reach me directly</h3>
             <p className="info-desc">
-              Currently available for full-time Full Stack Developer roles. Feel free to connect directly via email, phone, or LinkedIn.
+              Email is the quickest way. Phone and LinkedIn also work.
             </p>
 
             <div className="contact-methods">
               <motion.a
                 href="mailto:chiragtank1971@gmail.com"
                 className="method-item"
-                whileHover={{ x: 6 }}
-                transition={{ duration: 0.2 }}
               >
                 <div className="method-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -116,7 +111,7 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <div className="method-label">Direct Email</div>
+                  <div className="method-label">Email</div>
                   <div className="method-value">chiragtank1971@gmail.com</div>
                 </div>
               </motion.a>
@@ -124,8 +119,6 @@ export default function Contact() {
               <motion.a
                 href="tel:+916367583182"
                 className="method-item"
-                whileHover={{ x: 6 }}
-                transition={{ duration: 0.2 }}
               >
                 <div className="method-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -146,14 +139,14 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <div className="method-label">Location &amp; Availability</div>
+                  <div className="method-label">Location</div>
                   <div className="method-value">Rajasthan, India &bull; Remote / Relocation</div>
                 </div>
               </div>
             </div>
 
             <div className="connect-socials">
-              <span className="socials-title">Follow &amp; Network:</span>
+              <span className="socials-title">Elsewhere</span>
               <div className="social-links-row">
                 <a
                   href="https://github.com/Chirag-Tank1971"
@@ -270,11 +263,7 @@ export default function Contact() {
                 {sendError && <span className="error-message">{sendError}</span>}
 
                 <button type="submit" className="btn btn-primary" style={{ width: '100%' }} disabled={sending}>
-                  <span>{sending ? 'Sending...' : 'Send Message'}</span>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                  </svg>
+                  <span>{sending ? 'Sending...' : 'Send message'}</span>
                 </button>
               </form>
             )}
@@ -296,11 +285,11 @@ export default function Contact() {
           justify-content: space-between;
         }
         .info-title {
-          font-size: 2.4rem;
-          font-weight: 700;
+          font-family: var(--font-display);
+          font-size: 2.8rem;
+          font-weight: 500;
           color: var(--text-primary);
-          margin-bottom: 1.2rem;
-          letter-spacing: -0.02em;
+          margin-bottom: 1rem;
         }
         .info-desc {
           font-size: 1.55rem;
@@ -318,23 +307,16 @@ export default function Contact() {
           display: flex;
           align-items: center;
           gap: 1.6rem;
-          padding: 1.4rem;
-          border-radius: 1.4rem;
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid var(--border-subtle);
-          transition: all 0.2s ease;
+          padding: 1.2rem 0;
+          border-bottom: 1px solid var(--border-subtle);
         }
-        .method-item:hover {
-          background: var(--bg-card-hover);
-          border-color: var(--border-hover);
-          transform: translateX(4px);
+        .method-item:hover .method-value {
+          color: var(--accent-primary);
         }
         .method-icon {
-          width: 44px;
-          height: 44px;
-          border-radius: 1.2rem;
-          background: rgba(99, 102, 241, 0.1);
-          color: var(--accent-primary);
+          width: 36px;
+          height: 36px;
+          color: var(--text-muted);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -356,32 +338,14 @@ export default function Contact() {
           border-top: 1px solid var(--border-subtle);
         }
         .socials-title {
-          font-size: 1.3rem;
+          font-size: 1.4rem;
           color: var(--text-muted);
-          font-family: 'JetBrains Mono', monospace;
-          text-transform: uppercase;
           display: block;
           margin-bottom: 1.2rem;
         }
         .social-links-row {
           display: flex;
           gap: 1rem;
-        }
-        .social-icon-btn {
-          width: 42px;
-          height: 42px;
-          border-radius: 1.2rem;
-          background: var(--bg-card);
-          border: 1px solid var(--border-subtle);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: all 0.2s ease;
-        }
-        .social-icon-btn:hover {
-          border-color: var(--border-hover);
-          background: var(--bg-card-hover);
-          transform: translateY(-2px);
         }
         .contact-form-card {
           padding: 3.6rem;
@@ -403,7 +367,7 @@ export default function Contact() {
         }
         .form-input {
           padding: 1.2rem 1.6rem;
-          border-radius: 1.2rem;
+          border-radius: 4px;
           background: var(--bg-input);
           border: 1px solid var(--border-subtle);
           color: var(--text-primary);
@@ -412,7 +376,7 @@ export default function Contact() {
         }
         .form-input:focus {
           border-color: var(--accent-primary);
-          box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+          box-shadow: none;
         }
         .form-textarea {
           resize: vertical;
@@ -427,18 +391,6 @@ export default function Contact() {
         .success-state {
           padding: 4rem 2rem;
           text-align: center;
-        }
-        .success-icon {
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          background: rgba(16, 185, 129, 0.15);
-          color: var(--accent-emerald);
-          font-size: 3rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin: 0 auto 2rem;
         }
         @media (max-width: 900px) {
           .contact-grid {

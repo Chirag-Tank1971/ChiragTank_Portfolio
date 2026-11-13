@@ -8,28 +8,28 @@ const pieces = [
   {
     // back of envelope -> upper wing
     key: 'back',
-    fill: '#6366f1',
+    fill: '#2f6f66',
     env: q('20 44', '180 44', '180 124', '20 124'),
     plane: q('192 64', '28 22', '82 70', '82 70')
   },
   {
     // left triangle -> lower wing
     key: 'left',
-    fill: '#818cf8',
+    fill: '#4a8f84',
     env: q('20 44', '100 88', '20 124', '20 124'),
     plane: q('192 64', '82 70', '56 104', '56 104')
   },
   {
     // right triangle -> keel
     key: 'right',
-    fill: '#4f46e5',
+    fill: '#1f5149',
     env: q('180 44', '100 88', '180 124', '180 124'),
     plane: q('192 64', '82 70', '112 90', '112 90')
   },
   {
     // bottom triangle -> tail fold
     key: 'bottom',
-    fill: '#a5b4fc',
+    fill: '#8fc2b8',
     env: q('20 124', '100 88', '180 124', '180 124'),
     plane: q('82 70', '56 104', '70 112', '112 90')
   }
@@ -82,7 +82,7 @@ export default function SentAnimation() {
         <motion.path
           d="M 0 190 C 80 190, 120 120, 200 110 S 330 40, 400 0"
           fill="none"
-          stroke="#818cf8"
+          stroke="#4a8f84"
           strokeWidth="2"
           strokeDasharray="5 7"
           strokeLinecap="round"
@@ -136,7 +136,7 @@ export default function SentAnimation() {
 
           {/* envelope flap: opens, closes, then folds away into the plane */}
           <motion.path
-            fill="#c7d2fe"
+            fill="#cfe4de"
             stroke="rgba(255,255,255,0.7)"
             strokeWidth="1"
             strokeLinejoin="round"
@@ -163,7 +163,7 @@ export default function SentAnimation() {
           position: absolute;
           inset: 0;
           transform-origin: 50% 50%;
-          filter: drop-shadow(0 8px 14px rgba(99, 102, 241, 0.35));
+          filter: drop-shadow(0 8px 14px rgba(23, 35, 59, 0.28));
         }
         .trail {
           position: absolute;

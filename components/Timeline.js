@@ -49,17 +49,14 @@ export default function Timeline() {
       <div className="container">
         <motion.div
           className="section-header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.55 }}
+          transition={{ duration: 0.5 }}
         >
-          <span className="section-tag">Experience &amp; Education</span>
-          <h2 className="section-title">
-            Professional <span className="gradient-text">Journey Map</span>
-          </h2>
+          <h2 className="section-title">Experience and education</h2>
           <p className="section-subtitle">
-            My industry engineering roles, professional full-stack contracts, and formal Computer Science education.
+            Three engineering roles and an MCA, most recent first.
           </p>
         </motion.div>
 
@@ -76,7 +73,6 @@ export default function Timeline() {
                 <div className="timeline-content bento-card">
                   <div className="timeline-meta-row">
                     <span className="timeline-period-badge">{item.period}</span>
-                    <span className="timeline-type-pill">{item.type}</span>
                   </div>
 
                   <h3 className="timeline-title">{item.title}</h3>
@@ -97,133 +93,6 @@ export default function Timeline() {
         </div>
       </div>
 
-      <style jsx>{`
-        .timeline-wrapper {
-          position: relative;
-          max-width: 900px;
-          margin: 0 auto;
-          padding: 2rem 0;
-        }
-        .timeline-line {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 24px;
-          width: 2px;
-          background: linear-gradient(180deg, var(--accent-primary) 0%, rgba(168, 85, 247, 0.4) 50%, transparent 100%);
-        }
-        .timeline-items {
-          display: flex;
-          flex-direction: column;
-          gap: 3.6rem;
-        }
-        .timeline-item {
-          display: flex;
-          align-items: flex-start;
-          gap: 2.8rem;
-          position: relative;
-        }
-        .timeline-dot-wrapper {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 48px;
-          height: 48px;
-          flex-shrink: 0;
-          position: relative;
-          z-index: 2;
-        }
-        .timeline-dot {
-          width: 16px;
-          height: 16px;
-          border-radius: 50%;
-          background: var(--bg-canvas);
-          border: 3px solid var(--accent-primary);
-          box-shadow: 0 0 16px var(--accent-primary);
-          transition: all 0.3s ease;
-        }
-        .dot-edu {
-          border-color: var(--accent-cyan);
-          box-shadow: 0 0 16px var(--accent-cyan);
-        }
-        .timeline-item:hover .timeline-dot {
-          background: var(--accent-primary);
-          transform: scale(1.3);
-        }
-        .timeline-item:hover .dot-edu {
-          background: var(--accent-cyan);
-        }
-        .timeline-content {
-          flex: 1;
-          padding: 3rem;
-        }
-        .timeline-meta-row {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 1.2rem;
-          flex-wrap: wrap;
-          gap: 0.8rem;
-        }
-        .timeline-period-badge {
-          display: inline-block;
-          font-family: 'JetBrains Mono', monospace;
-          font-size: 1.25rem;
-          font-weight: 600;
-          color: var(--accent-primary);
-          background: rgba(99, 102, 241, 0.1);
-          border: 1px solid rgba(99, 102, 241, 0.2);
-          padding: 0.4rem 1.2rem;
-          border-radius: 9999px;
-        }
-        .timeline-type-pill {
-          font-size: 1.2rem;
-          font-weight: 600;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          color: var(--text-muted);
-          font-family: 'JetBrains Mono', monospace;
-        }
-        .timeline-title {
-          font-size: 2.2rem;
-          font-weight: 700;
-          color: var(--text-primary);
-          margin-bottom: 0.6rem;
-          letter-spacing: -0.02em;
-        }
-        .timeline-org {
-          font-size: 1.5rem;
-          color: var(--accent-secondary);
-          font-weight: 600;
-          margin-bottom: 1.4rem;
-        }
-        .timeline-desc {
-          font-size: 1.5rem;
-          color: var(--text-secondary);
-          line-height: 1.65;
-          margin-bottom: 2rem;
-        }
-        .timeline-tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.8rem;
-        }
-        @media (max-width: 640px) {
-          .timeline-line {
-            left: 16px;
-          }
-          .timeline-dot-wrapper {
-            width: 32px;
-            height: 32px;
-          }
-          .timeline-item {
-            gap: 1.6rem;
-          }
-          .timeline-title {
-            font-size: 1.9rem;
-          }
-        }
-      `}</style>
     </section>
   );
 }

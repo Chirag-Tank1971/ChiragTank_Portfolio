@@ -1,0 +1,54 @@
+[     251ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_react-dom_4411d9bd._.js:15306
+[     304ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_75b597d7._.js:1207
+[   29614ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2267
+[   30630ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2267
+[   32180ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_75b597d7._.js:1207
+[   33114ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_react-dom_4411d9bd._.js:15306
+[   33126ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_75b597d7._.js:1207
+[   33126ms] [WARNING] [HMR] Invalid message: {"type":"isrManifest","data":{"/":true}}
+TypeError: Cannot read properties of undefined (reading 'components')
+    at handleStaticIndicator (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2715:46)
+    at processMessage (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2729:17)
+    at http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2603:13
+    at WebSocket.handleMessage (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2248:17) @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_75b597d7._.js:1207
+[   37139ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_react-dom_4411d9bd._.js:15306
+[   37151ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_75b597d7._.js:1207
+[   37151ms] [WARNING] [HMR] Invalid message: {"type":"isrManifest","data":{"/":true}}
+TypeError: Cannot read properties of undefined (reading 'components')
+    at handleStaticIndicator (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2715:46)
+    at processMessage (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2729:17)
+    at http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2603:13
+    at WebSocket.handleMessage (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2248:17) @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_75b597d7._.js:1207
+[   52081ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_75b597d7._.js:1207
+[   52103ms] [LOG] [Fast Refresh] done in 51ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_75b597d7._.js:1207
+[   69164ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2267
+[   70177ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2267
+[   71589ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_75b597d7._.js:1207
+[   72430ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_react-dom_4411d9bd._.js:15306
+[   72442ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_75b597d7._.js:1207
+[   72442ms] [WARNING] [HMR] Invalid message: {"type":"isrManifest","data":{"/":true}}
+TypeError: Cannot read properties of undefined (reading 'components')
+    at handleStaticIndicator (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2715:46)
+    at processMessage (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2729:17)
+    at http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2603:13
+    at WebSocket.handleMessage (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2248:17) @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_75b597d7._.js:1207
+[   76626ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_react-dom_4411d9bd._.js:15306
+[   76636ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_75b597d7._.js:1207
+[   76637ms] [WARNING] [HMR] Invalid message: {"type":"isrManifest","data":{"/":true}}
+TypeError: Cannot read properties of undefined (reading 'components')
+    at handleStaticIndicator (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2715:46)
+    at processMessage (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2729:17)
+    at http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2603:13
+    at WebSocket.handleMessage (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2248:17) @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_75b597d7._.js:1207
+[  124508ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2267
+[  125512ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2267
+[  126542ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2267
+[  127549ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2267
+[  128553ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2267
+[  133560ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2267
+[  138567ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2267
+[  143582ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2267
+[  148595ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2267
+[  153600ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2267
+[  158609ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2267
+[  163612ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_5a8a528e._.js:2267

@@ -15,7 +15,7 @@ export default function Footer() {
               <span className="brand-name">Chirag Tank</span>
             </div>
             <p className="brand-desc">
-              Full-Stack Web Developer crafting modern, resilient digital products. Based in Jaipur, India.
+              Full-stack developer in Jaipur, India.
             </p>
           </div>
 
@@ -51,14 +51,14 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p className="copyright">
-            &copy; {new Date().getFullYear()} Designed &amp; Engineered by{' '}
+            &copy; {new Date().getFullYear()} Built by{' '}
             <a href="https://github.com/Chirag-Tank1971" target="_blank" rel="noreferrer" className="author-link">
               Chirag Tank
             </a>
           </p>
 
           <button onClick={scrollToTop} className="back-to-top" aria-label="Back to top">
-            <span>Back to Top</span>
+            <span>Back to top</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="12" y1="19" x2="12" y2="5"></line>
               <polyline points="5 12 12 5 19 12"></polyline>
@@ -99,18 +99,20 @@ export default function Footer() {
         .brand-badge {
           width: 32px;
           height: 32px;
-          border-radius: 0.8rem;
-          background: var(--accent-gradient);
-          color: #ffffff;
+          border-radius: 4px;
+          background: var(--text-primary);
+          color: var(--bg-canvas);
           display: flex;
           align-items: center;
           justify-content: center;
-          font-weight: 800;
-          font-size: 1.25rem;
+          font-family: var(--font-display);
+          font-weight: 600;
+          font-size: 1.3rem;
         }
         .brand-name {
-          font-size: 1.8rem;
-          font-weight: 700;
+          font-family: var(--font-display);
+          font-size: 2rem;
+          font-weight: 500;
           color: var(--text-primary);
         }
         .brand-desc {
@@ -119,11 +121,8 @@ export default function Footer() {
           line-height: 1.6;
         }
         .footer-heading {
-          font-family: 'JetBrains Mono', monospace;
-          font-size: 1.25rem;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          color: var(--text-muted);
+          font-size: 1.4rem;
+          color: var(--text-primary);
           font-weight: 600;
           margin-bottom: 1.6rem;
           display: block;
@@ -148,18 +147,10 @@ export default function Footer() {
         .footer-icon-link {
           width: 38px;
           height: 38px;
-          border-radius: 1rem;
-          background: var(--bg-card);
-          border: 1px solid var(--border-subtle);
+          border-radius: 4px;
           display: flex;
           align-items: center;
           justify-content: center;
-          transition: all 0.2s ease;
-        }
-        .footer-icon-link:hover {
-          background: var(--bg-card-hover);
-          border-color: var(--border-hover);
-          transform: translateY(-2px);
         }
         .footer-bottom {
           display: flex;
@@ -185,15 +176,14 @@ export default function Footer() {
           border: 1px solid var(--border-subtle);
           color: var(--text-secondary);
           padding: 0.6rem 1.4rem;
-          border-radius: 9999px;
+          border-radius: 4px;
           font-size: 1.3rem;
           cursor: pointer;
-          transition: all 0.2s ease;
+          transition: color 0.2s ease, border-color 0.2s ease;
         }
         .back-to-top:hover {
           color: var(--accent-primary);
           border-color: var(--accent-primary);
-          background: var(--bg-card);
         }
         @media (max-width: 768px) {
           .footer-top {

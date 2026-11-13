@@ -66,238 +66,155 @@ export default function About() {
     }
   ];
 
+  const highlights = [
+    {
+      title: '8+ OCR and vision-language models benchmarked',
+      text: 'Open-weight models on an NVIDIA DGX Spark compared against paid APIs on accuracy, speed and cost.'
+    },
+    {
+      title: '60–80% fewer redundant API calls',
+      text: 'TTL caching and model fallback for the Gemini integration in TaskFlow.'
+    },
+    {
+      title: '~30% faster queries',
+      text: 'Schema redesign and Entity Framework Core optimisation on SQL Server.'
+    },
+    {
+      title: 'Tested and shipped through CI/CD',
+      text: 'GitHub Actions pipelines, Docker, Jest and pytest.'
+    }
+  ];
+
   return (
     <section id="about" className="section-pad">
       <div className="container">
         <motion.div
           className="section-header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.5 }}
         >
-          <span className="section-tag">About &amp; Skills</span>
-          <h2 className="section-title">
-            Engineering High-Performance <span className="gradient-text">Full-Stack Solutions</span>
-          </h2>
+          <h2 className="section-title">About</h2>
           <p className="section-subtitle">
             Full-stack development with MERN, ASP.NET Core and Python, plus hands-on OCR and vision-language model work for multilingual document digitisation.
           </p>
         </motion.div>
 
-        {/* Bento Grid */}
-        <div className="bento-grid">
-          {/* Main Bio Card */}
-          <div className="bento-card bio-card">
-            <div className="card-badge">Summary &bull; MCA (2026)</div>
-            <h3 className="card-title">Chirag Tank — Full Stack Developer</h3>
+        <div className="about-grid">
+          <div className="bio">
             <p className="bio-para">
-              I am a <strong>Full-Stack Developer</strong> based in <strong>Jaipur, Rajasthan</strong> (MERN, ASP.NET Core, Python) with hands-on experience evaluating, fine-tuning and deploying <strong>OCR and vision-language models</strong> on NVIDIA GPU hardware for multilingual document digitisation in Hindi, Urdu and Kaithi.
+              I am a full-stack developer based in Jaipur, Rajasthan (MERN, ASP.NET Core, Python) with hands-on experience evaluating, fine-tuning and deploying OCR and vision-language models on NVIDIA GPU hardware for multilingual document digitisation in Hindi, Urdu and Kaithi.
             </p>
             <p className="bio-para">
-              I have built web platforms across HR tech, ed-tech and social media, improved database query performance by <strong>~30%</strong> with Entity Framework Core, and cut redundant Gemini API calls by <strong>60–80%</strong> through TTL caching. I also integrate LLM APIs for task classification and routing.
+              I have built web platforms across HR tech, ed-tech and social media, and I integrate LLM APIs for task classification and routing. I finish my MCA in 2026 and I am open to remote work and relocation.
             </p>
-            <div className="bio-cta">
-              <a href="#contact" className="btn btn-primary btn-sm">
-                Get In Touch
-              </a>
-              <span className="location-pill">📍 Rajasthan, India &bull; Open to Remote &amp; Relocation</span>
-            </div>
+            <a href="#contact" className="btn btn-primary btn-sm">
+              Get in touch
+            </a>
           </div>
 
-          {/* Quick Metrics & Core Impact */}
-          <div className="bento-card philosophy-card">
-            <div className="card-badge">Engineering Highlights</div>
-            <h3 className="card-title">Key Impacts</h3>
-            <ul className="principles-list">
-              <li>
-                <span className="principle-dot"></span>
-                <div>
-                  <strong>60–80% API Cost Cut:</strong> Implemented smart TTL caching and fallback systems for LLM API integrations.
-                </div>
+          <ul className="highlights">
+            {highlights.map((h) => (
+              <li key={h.title}>
+                <h3 className="highlight-title">{h.title}</h3>
+                <p className="highlight-text">{h.text}</p>
               </li>
-              <li>
-                <span className="principle-dot"></span>
-                <div>
-                  <strong>~30% Query Speedup:</strong> Schema redesign and EF Core optimization across SQL Server and MongoDB.
-                </div>
-              </li>
-              <li>
-                <span className="principle-dot"></span>
-                <div>
-                  <strong>8+ OCR/VLM Models Benchmarked:</strong> Compared open-weight models on an NVIDIA DGX Spark against paid APIs on accuracy, speed and cost.
-                </div>
-              </li>
-              <li>
-                <span className="principle-dot"></span>
-                <div>
-                  <strong>CI/CD &amp; Testing:</strong> Automated GitHub Actions pipelines, Docker containerization, Jest and pytest testing.
-                </div>
-              </li>
-            </ul>
-          </div>
+            ))}
+          </ul>
         </div>
 
-        {/* Categorized Skills Section */}
         <div id="skills" className="skills-container">
-          <motion.div
-            className="section-header"
-            style={{ marginBottom: '3.6rem', marginTop: '6rem' }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.55 }}
-          >
-            <span className="section-tag">Technical Competencies</span>
-            <h3 className="section-title" style={{ fontSize: '3rem' }}>
-              Technical <span className="gradient-text">Skillset</span>
-            </h3>
-          </motion.div>
-
-          <div className="skills-grid">
-            {skillCategories.map((category, index) => (
-              <div key={index} className="bento-card skill-category-card">
-                <div className="category-header">
-                  <div className="category-icon">{category.icon}</div>
-                  <h4 className="category-title">{category.title}</h4>
-                </div>
-                <div className="category-pills">
-                  {category.skills.map((skill, sIdx) => (
-                    <motion.span
-                      key={sIdx}
-                      className="tech-tag"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      {skill}
-                    </motion.span>
-                  ))}
-                </div>
+          <h2 className="skills-title">Skills</h2>
+          <dl className="skills-list">
+            {skillCategories.map((category) => (
+              <div key={category.title} className="skills-row">
+                <dt className="skills-name">{category.title}</dt>
+                <dd className="skills-items">{category.skills.join(', ')}</dd>
               </div>
             ))}
-          </div>
+          </dl>
         </div>
       </div>
 
       <style jsx>{`
-        .bento-grid {
+        .about-grid {
           display: grid;
-          grid-template-columns: 1.4fr 1fr;
-          gap: 2.4rem;
-          margin-bottom: 3.2rem;
-        }
-        .card-badge {
-          display: inline-block;
-          font-family: 'JetBrains Mono', monospace;
-          font-size: 1.2rem;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          color: var(--accent-primary);
-          margin-bottom: 1.2rem;
-          font-weight: 600;
-        }
-        .card-title {
-          font-size: 2.4rem;
-          font-weight: 700;
-          color: var(--text-primary);
-          margin-bottom: 1.6rem;
-          letter-spacing: -0.02em;
+          grid-template-columns: 1.1fr 1fr;
+          gap: 6.4rem;
+          margin-bottom: 9rem;
         }
         .bio-para {
-          font-size: 1.55rem;
+          font-size: 1.7rem;
           color: var(--text-secondary);
-          line-height: 1.7;
-          margin-bottom: 1.6rem;
+          line-height: 1.75;
+          max-width: 60ch;
+          margin-bottom: 1.8rem;
         }
-        .bio-para strong {
-          color: var(--text-primary);
+        .bio .btn {
+          margin-top: 1rem;
         }
-        .bio-cta {
-          display: flex;
-          align-items: center;
-          gap: 2rem;
-          margin-top: 2.8rem;
-          flex-wrap: wrap;
-        }
-        .location-pill {
-          font-size: 1.3rem;
-          color: var(--text-muted);
-          font-weight: 500;
-        }
-        .principles-list {
+        .highlights {
           list-style: none;
           display: flex;
           flex-direction: column;
-          gap: 1.6rem;
-          margin-top: 1.6rem;
         }
-        .principles-list li {
-          display: flex;
-          align-items: flex-start;
-          gap: 1.2rem;
+        .highlights li {
+          padding: 2rem 0;
+          border-top: 1px solid var(--border-subtle);
+        }
+        .highlights li:last-child {
+          border-bottom: 1px solid var(--border-subtle);
+        }
+        .highlight-title {
+          font-family: var(--font-display);
+          font-size: 2rem;
+          font-weight: 500;
+          color: var(--text-primary);
+          margin-bottom: 0.4rem;
+          line-height: 1.25;
+        }
+        .highlight-text {
           font-size: 1.45rem;
           color: var(--text-secondary);
-          line-height: 1.5;
+          line-height: 1.6;
         }
-        .principles-list strong {
-          color: var(--text-primary);
-          display: block;
-          margin-bottom: 0.2rem;
+        .skills-title {
+          font-family: var(--font-display);
+          font-size: 3.2rem;
+          font-weight: 500;
+          margin-bottom: 2.4rem;
         }
-        .principle-dot {
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          background: var(--accent-primary);
-          margin-top: 0.6rem;
-          flex-shrink: 0;
+        .skills-list {
+          border-top: 1px solid var(--border-subtle);
         }
-        .skills-grid {
+        .skills-row {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: 22rem 1fr;
           gap: 2.4rem;
+          padding: 1.8rem 0;
+          border-bottom: 1px solid var(--border-subtle);
         }
-        .skill-category-card {
-          padding: 2.8rem;
-        }
-        .category-header {
-          display: flex;
-          align-items: center;
-          gap: 1.4rem;
-          margin-bottom: 2rem;
-        }
-        .category-icon {
-          width: 44px;
-          height: 44px;
-          border-radius: 1.2rem;
-          background: rgba(99, 102, 241, 0.1);
-          border: 1px solid rgba(99, 102, 241, 0.2);
-          color: var(--accent-primary);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-        }
-        .category-title {
-          font-size: 1.7rem;
-          font-weight: 700;
+        .skills-name {
+          font-size: 1.45rem;
+          font-weight: 600;
           color: var(--text-primary);
         }
-        .category-pills {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.8rem;
-        }
-        @media (max-width: 1024px) {
-          .skills-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
+        .skills-items {
+          font-size: 1.5rem;
+          color: var(--text-secondary);
+          line-height: 1.7;
+          max-width: 70ch;
         }
         @media (max-width: 860px) {
-          .bento-grid {
+          .about-grid {
             grid-template-columns: 1fr;
+            gap: 4rem;
+            margin-bottom: 6rem;
           }
-          .skills-grid {
+          .skills-row {
             grid-template-columns: 1fr;
+            gap: 0.4rem;
           }
         }
       `}</style>

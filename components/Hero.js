@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { GithubIcon, LinkedinIcon, TwitterIcon } from './Icons';
+import HeroStage from './HeroStage';
 
 export default function Hero({ onOpenResume }) {
   const socials = [
@@ -7,40 +8,40 @@ export default function Hero({ onOpenResume }) {
       name: 'GitHub',
       url: 'https://github.com/Chirag-Tank1971',
       id: 'github',
-      icon: <GithubIcon size={18} />
+      icon: <GithubIcon size={16} />
     },
     {
       name: 'LinkedIn',
       url: 'https://linkedin.com/in/chirag-tank',
       id: 'linkedin',
-      icon: <LinkedinIcon size={18} />
+      icon: <LinkedinIcon size={16} />
     },
     {
       name: 'Twitter',
       url: 'https://x.com/ChiragT38130967',
       id: 'twitter',
-      icon: <TwitterIcon size={18} />
+      icon: <TwitterIcon size={16} />
     }
+  ];
+
+  const facts = [
+    { value: '3', label: 'roles in the last two years', note: 'Mintergraph, Myna Solutions, Pratham Software' },
+    { value: '3', label: 'scripts digitised', note: 'Hindi, Urdu and Kaithi government records' },
+    { value: '2026', label: 'MCA', note: 'Sri Balaji College of Engineering and Technology, Jaipur' }
   ];
 
   return (
     <section className="hero-section section-pad">
-      <div className="ambient-glow"></div>
-      <div className="ambient-glow-secondary"></div>
-
       <div className="container hero-container">
         <div className="hero-content">
-          <div className="status-pill">
-            <span className="pulse-dot"></span>
-            <span>Open to Remote Work &amp; Relocation</span>
-          </div>
-
-          <h1 className="hero-title">
-            Hey, I&apos;m <span className="gradient-text">Chirag Tank</span>
-          </h1>
+          <h1 className="hero-title">Chirag Tank</h1>
+          <p className="hero-script" lang="hi" aria-label="Chirag Tank in Devanagari">
+            चिराग टंक
+          </p>
 
           <p className="hero-role">
-            Full Stack Developer &bull; AI &amp; LLM Integration &bull; OCR / Vision-Language Models
+            Full stack developer. I build web platforms and work on turning scanned
+            records into searchable text.
           </p>
 
           <p className="hero-description">
@@ -51,47 +52,31 @@ export default function Hero({ onOpenResume }) {
             <motion.a
               href="#projects"
               className="btn btn-primary"
-              whileHover={{ y: -3, scale: 1.02 }}
-              whileTap={{ scale: 0.96 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <span>View Projects</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
+              <span>View projects</span>
             </motion.a>
 
             <motion.a
               href="#contact"
               className="btn btn-secondary"
-              whileHover={{ y: -3, scale: 1.02 }}
-              whileTap={{ scale: 0.96 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <span>Contact Me</span>
+              <span>Contact me</span>
             </motion.a>
 
             {onOpenResume && (
               <motion.button
                 onClick={onOpenResume}
                 className="btn btn-secondary"
-                whileHover={{ y: -3, scale: 1.02 }}
-                whileTap={{ scale: 0.96 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <line x1="16" y1="13" x2="8" y2="13"></line>
-                  <line x1="16" y1="17" x2="8" y2="17"></line>
-                  <polyline points="10 9 9 9 8 9"></polyline>
-                </svg>
-                <span>CV / Resume</span>
+                <span>Resume</span>
               </motion.button>
             )}
           </div>
 
-          {/* Social Links Row */}
           <div className="hero-socials">
-            <span className="socials-label">Connect:</span>
             <div className="socials-list">
               {socials.map((social) => (
                 <a
@@ -108,54 +93,34 @@ export default function Hero({ onOpenResume }) {
               ))}
             </div>
           </div>
+
         </div>
 
-        {/* Quick Highlights Bento Card */}
-        <motion.div
-          className="hero-stats-card bento-card"
-          whileHover={{ y: -6 }}
-        >
-          <div className="stats-grid">
-            <div className="stat-item">
-              <span className="stat-number gradient-text">3+</span>
-              <span className="stat-label">Industry Roles</span>
-              <span className="stat-sub">Mintergraph &bull; Myna &bull; PSI</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number gradient-text">~30%</span>
-              <span className="stat-label">DB Speedup</span>
-              <span className="stat-sub">Query &amp; EF Core Optimization</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number gradient-text">60-80%</span>
-              <span className="stat-label">API Cost Cut</span>
-              <span className="stat-sub">TTL Cache &amp; Fallbacks</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number gradient-text">MCA</span>
-              <span className="stat-label">Candidate &apos;26</span>
-              <span className="stat-sub">Sri Balaji College (Jaipur)</span>
-            </div>
-          </div>
-        </motion.div>
+        <HeroStage />
+      </div>
+
+      <div className="container">
+        <dl className="facts">
+            {facts.map((f) => (
+              <div className="fact" key={f.label}>
+                <dt className="fact-value">{f.value}</dt>
+                <dd className="fact-label">{f.label}</dd>
+                <dd className="fact-note">{f.note}</dd>
+              </div>
+            ))}
+        </dl>
       </div>
 
       <style jsx>{`
         .hero-section {
-          padding-top: 14rem;
+          padding-top: 15rem;
           padding-bottom: 8rem;
-          min-height: 85vh;
-          display: flex;
-          align-items: center;
-          position: relative;
         }
         .hero-container {
           display: grid;
-          grid-template-columns: 1.25fr 0.75fr;
-          gap: 4.8rem;
+          grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+          gap: 4rem;
           align-items: center;
-          position: relative;
-          z-index: 1;
         }
         .hero-content {
           display: flex;
@@ -163,135 +128,87 @@ export default function Hero({ onOpenResume }) {
           align-items: flex-start;
         }
         .hero-title {
-          font-size: 5.2rem;
-          font-weight: 800;
-          letter-spacing: -0.04em;
-          line-height: 1.15;
-          margin: 2.2rem 0 1.2rem;
+          font-family: var(--font-display);
+          font-size: 8.4rem;
+          font-weight: 500;
+          letter-spacing: -0.035em;
+          line-height: 0.98;
           color: var(--text-primary);
         }
+        .hero-script {
+          font-family: var(--font-script);
+          font-size: 3.6rem;
+          font-weight: 500;
+          line-height: 1.5;
+          color: var(--accent-primary);
+          margin: 0.6rem 0 3.2rem;
+        }
         .hero-role {
-          font-size: 2rem;
-          font-weight: 600;
-          color: var(--text-secondary);
-          margin-bottom: 1.6rem;
-          line-height: 1.4;
+          font-family: var(--font-display);
+          font-size: 2.6rem;
+          line-height: 1.3;
+          color: var(--text-primary);
+          max-width: 30ch;
+          margin-bottom: 2rem;
         }
         .hero-description {
-          font-size: 1.55rem;
-          color: var(--text-muted);
-          line-height: 1.7;
-          max-width: 620px;
+          font-size: 1.6rem;
+          color: var(--text-secondary);
+          line-height: 1.75;
+          max-width: 64ch;
           margin-bottom: 3.2rem;
         }
         .hero-actions {
           display: flex;
           flex-wrap: wrap;
-          gap: 1.4rem;
-          margin-bottom: 3.6rem;
-        }
-        .hero-socials {
-          display: flex;
-          align-items: center;
-          gap: 1.6rem;
-          flex-wrap: wrap;
-        }
-        .socials-label {
-          font-size: 1.3rem;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          color: var(--text-muted);
-          font-weight: 600;
-          font-family: 'JetBrains Mono', monospace;
+          gap: 1.2rem;
+          margin-bottom: 3rem;
         }
         .socials-list {
           display: flex;
-          gap: 1rem;
+          gap: 2.4rem;
           flex-wrap: wrap;
         }
-        .social-pill {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.9rem;
-          padding: 0.75rem 1.6rem;
-          border-radius: 9999px;
-          background: var(--bg-card);
-          border: 1px solid var(--border-subtle);
-          font-size: 1.35rem;
-          font-weight: 500;
-          color: var(--text-secondary);
-          transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-          backdrop-filter: var(--glass-blur);
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-          cursor: pointer;
-        }
-        .social-pill:hover {
-          color: var(--text-primary);
-          border-color: var(--border-hover);
-          background: var(--bg-card-hover);
-          transform: translateY(-2.5px);
-          box-shadow: 0 6px 18px rgba(99, 102, 241, 0.18);
-        }
-        .social-pill-icon {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 18px;
-          height: 18px;
-          color: var(--text-secondary);
-          transition: color 0.2s ease, transform 0.2s ease;
-          flex-shrink: 0;
-        }
-        .social-pill:hover .social-pill-icon {
-          transform: scale(1.12);
-        }
-        .social-pill.github:hover .social-pill-icon {
-          color: #f0f6fc;
-        }
-        .social-pill.linkedin:hover .social-pill-icon {
-          color: #0a66c2;
-        }
-        .social-pill.twitter:hover .social-pill-icon {
-          color: #1d9bf0;
-        }
-        .hero-stats-card {
-          padding: 3.6rem;
-        }
-        .stats-grid {
+        .facts {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(3, 1fr);
           gap: 2.4rem;
+          width: 100%;
+          margin-top: 6.4rem;
+          padding-top: 2.8rem;
+          border-top: 1px solid var(--border-subtle);
         }
-        .stat-item {
+        .fact {
           display: flex;
           flex-direction: column;
           gap: 0.4rem;
         }
-        .stat-number {
-          font-size: 3.4rem;
-          font-weight: 800;
-          letter-spacing: -0.03em;
-          line-height: 1;
+        .fact-value {
+          font-family: var(--font-display);
+          font-size: 3rem;
+          font-weight: 500;
+          line-height: 1.1;
+          color: var(--text-primary);
         }
-        .stat-label {
+        .fact-label {
           font-size: 1.4rem;
           color: var(--text-primary);
-          font-weight: 600;
+          line-height: 1.4;
         }
-        .stat-sub {
-          font-size: 1.2rem;
+        .fact-note {
+          font-size: 1.3rem;
           color: var(--text-muted);
+          line-height: 1.4;
         }
         @media (max-width: 992px) {
           .hero-container {
             grid-template-columns: 1fr;
-            gap: 3.6rem;
           }
           .hero-title {
-            font-size: 4.2rem;
+            font-size: 7.2rem;
           }
-          .hero-role {
-            font-size: 1.8rem;
+          .facts {
+            grid-template-columns: repeat(2, 1fr);
           }
         }
         @media (max-width: 580px) {
@@ -299,11 +216,16 @@ export default function Hero({ onOpenResume }) {
             padding-top: 11rem;
           }
           .hero-title {
-            font-size: 3.4rem;
+            font-size: 5.2rem;
           }
-          .stats-grid {
-            grid-template-columns: 1fr 1fr;
-            gap: 1.8rem;
+          .hero-script {
+            font-size: 2.8rem;
+          }
+          .hero-role {
+            font-size: 2.1rem;
+          }
+          .facts {
+            gap: 2rem 1.6rem;
           }
         }
       `}</style>

@@ -198,11 +198,10 @@ export default function Header({ onOpenResume }) {
           bottom: 0;
           left: 0;
           right: 0;
-          height: 3px;
-          background: var(--accent-gradient);
+          height: 2px;
+          background: var(--accent-primary);
           transform-origin: 0%;
           z-index: 1000;
-          box-shadow: 0 0 10px rgba(99, 102, 241, 0.6);
         }
         .header {
           position: fixed;
@@ -216,10 +215,7 @@ export default function Header({ onOpenResume }) {
         .header-scrolled {
           padding: 1.2rem 0;
           background: var(--glass-bg);
-          backdrop-filter: var(--glass-blur);
-          -webkit-backdrop-filter: var(--glass-blur);
           border-bottom: 1px solid var(--border-subtle);
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
         .header-container {
           display: flex;
@@ -237,18 +233,18 @@ export default function Header({ onOpenResume }) {
           justify-content: center;
           width: 36px;
           height: 36px;
-          border-radius: 1rem;
-          background: var(--accent-gradient);
-          color: #ffffff;
-          font-weight: 800;
-          font-size: 1.4rem;
-          letter-spacing: -0.02em;
-          box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+          border-radius: 4px;
+          background: var(--text-primary);
+          color: var(--bg-canvas);
+          font-family: var(--font-display);
+          font-weight: 600;
+          font-size: 1.5rem;
         }
         .logo-name {
-          font-size: 1.8rem;
-          font-weight: 700;
-          letter-spacing: -0.02em;
+          font-family: var(--font-display);
+          font-size: 2rem;
+          font-weight: 500;
+          letter-spacing: -0.01em;
           color: var(--text-primary);
         }
         .logo-dot {
@@ -279,8 +275,8 @@ export default function Header({ onOpenResume }) {
         .theme-toggle {
           width: 40px;
           height: 40px;
-          border-radius: 1.2rem;
-          background: var(--bg-card);
+          border-radius: 4px;
+          background: transparent;
           border: 1px solid var(--border-subtle);
           color: var(--text-primary);
           display: flex;
@@ -290,9 +286,7 @@ export default function Header({ onOpenResume }) {
           transition: all 0.2s ease;
         }
         .theme-toggle:hover {
-          border-color: var(--border-hover);
-          background: var(--bg-card-hover);
-          color: var(--accent-primary);
+          border-color: var(--text-primary);
         }
         .resume-btn {
           display: inline-flex;
@@ -304,7 +298,7 @@ export default function Header({ onOpenResume }) {
           color: var(--text-primary);
           width: 40px;
           height: 40px;
-          border-radius: 1rem;
+          border-radius: 4px;
           align-items: center;
           justify-content: center;
           cursor: pointer;
@@ -312,8 +306,6 @@ export default function Header({ onOpenResume }) {
         .mobile-menu {
           display: none;
           background: var(--glass-bg);
-          backdrop-filter: var(--glass-blur);
-          -webkit-backdrop-filter: var(--glass-blur);
           border-bottom: 1px solid var(--border-subtle);
           padding: 2rem;
           animation: slideDown 0.2s ease;

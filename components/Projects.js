@@ -38,211 +38,154 @@ const projects = [
   }
 ];
 
+const GithubMark = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+  </svg>
+);
+
 export default function Projects() {
   return (
     <section id="projects" className="section-pad">
       <div className="container">
         <motion.div
           className="section-header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.55 }}
+          transition={{ duration: 0.5 }}
         >
-          <span className="section-tag">Featured Work</span>
-          <h2 className="section-title">
-            Production &amp; <span className="gradient-text">Engineered Projects</span>
-          </h2>
+          <h2 className="section-title">Projects</h2>
           <p className="section-subtitle">
-            Showcasing full-stack MERN platforms, automated trading bots, and enterprise web solutions with measurable performance.
+            A task-routing system, a trading bot and an online store, each deployed and linked below.
           </p>
         </motion.div>
 
-        <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div key={project.id} className="bento-card project-card">
-              <div className="project-image-wrapper">
+        <div className="projects-list">
+          {projects.map((project) => (
+            <article key={project.id} className="project">
+              <Link href={project.link} className="project-image-wrapper" aria-label={`${project.title} case study`}>
                 <Image
                   src={project.image}
-                  alt={project.title}
-                  width={700}
-                  height={420}
+                  alt={`${project.title} screenshot`}
+                  width={1400}
+                  height={640}
                   className="project-image"
                 />
-                <div className="project-image-overlay"></div>
-                <div className="project-badge">
-                  <span className="pulse-dot"></span>
-                  <span>{project.liveLink ? 'Live Demo' : 'Engineered'}</span>
-                </div>
-              </div>
+              </Link>
 
-              <div className="project-info">
-                <div className="project-meta">
-                  <span className="project-index">0{index + 1}</span>
-                  <span className="project-subtitle">{project.subtitle}</span>
+              <div className="project-body">
+                <div className="project-head">
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-subtitle">{project.subtitle}</p>
                 </div>
 
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-desc">{project.description}</p>
+                <div className="project-main">
+                  <p className="project-desc">{project.description}</p>
+                  <p className="project-stack">{project.tags.join(', ')}</p>
 
-                <div className="project-tags">
-                  {project.tags.map((tag, tIdx) => (
-                    <motion.span
-                      key={tIdx}
-                      className="tech-tag"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      {tag}
-                    </motion.span>
-                  ))}
-                </div>
-
-                <div className="project-actions">
-                  <Link href={project.link} className="btn btn-primary btn-sm">
-                    <span>Case Study</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </Link>
-
-                  {project.liveLink && (
+                  <div className="project-actions">
+                    <Link href={project.link} className="btn btn-primary btn-sm">
+                      Read case study
+                    </Link>
+                    {project.liveLink && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn-secondary btn-sm"
+                      >
+                        Open live site
+                      </a>
+                    )}
                     <a
-                      href={project.liveLink}
+                      href={project.codeLink}
                       target="_blank"
                       rel="noreferrer"
                       className="btn btn-secondary btn-sm"
                     >
-                      <span>Live Demo</span>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                      </svg>
+                      <GithubMark />
+                      <span>Source code</span>
                     </a>
-                  )}
-
-                  <a
-                    href={project.codeLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn btn-secondary btn-sm"
-                    aria-label="GitHub Repository"
-                  >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                      <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
-                    </svg>
-                    <span>Code</span>
-                  </a>
+                  </div>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
 
       <style jsx>{`
-        .projects-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-          gap: 3.2rem;
-        }
-        .project-card {
-          padding: 1.6rem 1.6rem 2.4rem;
+        .projects-list {
           display: flex;
           flex-direction: column;
-          height: 100%;
+          gap: 7.2rem;
+        }
+        .project {
+          display: flex;
+          flex-direction: column;
+          gap: 2.8rem;
         }
         .project-image-wrapper {
-          position: relative;
+          display: block;
           width: 100%;
           aspect-ratio: 1917 / 870;
-          border-radius: 1.6rem;
+          border: 1px solid var(--border-subtle);
+          border-radius: 8px;
           overflow: hidden;
-          background: rgba(0, 0, 0, 0.2);
-          margin-bottom: 2.4rem;
+          background: var(--bg-canvas-subtle);
         }
         :global(.project-image) {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          object-position: center;
-          transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+          display: block;
         }
-        .project-card:hover :global(.project-image) {
-          transform: scale(1.03);
-        }
-        .project-image-overlay {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(180deg, transparent 40%, rgba(9, 10, 17, 0.8) 100%);
-        }
-        .project-badge {
-          position: absolute;
-          top: 1.4rem;
-          right: 1.4rem;
-          display: inline-flex;
-          align-items: center;
-          gap: 0.6rem;
-          padding: 0.4rem 1rem;
-          background: rgba(9, 10, 17, 0.75);
-          backdrop-filter: blur(8px);
-          border: 1px solid rgba(16, 185, 129, 0.3);
-          border-radius: 9999px;
-          font-size: 1.2rem;
-          color: var(--accent-emerald);
-          font-weight: 600;
-        }
-        .project-info {
-          display: flex;
-          flex-direction: column;
-          flex: 1;
-        }
-        .project-meta {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-          margin-bottom: 0.8rem;
-        }
-        .project-index {
-          font-family: 'JetBrains Mono', monospace;
-          font-size: 1.25rem;
-          color: var(--accent-primary);
-          font-weight: 700;
-        }
-        .project-subtitle {
-          font-size: 1.3rem;
-          color: var(--text-muted);
-          font-weight: 500;
+        .project-body {
+          display: grid;
+          grid-template-columns: 1fr 1.4fr;
+          gap: 4rem;
         }
         .project-title {
-          font-size: 2.2rem;
-          font-weight: 700;
+          font-family: var(--font-display);
+          font-size: 3.2rem;
+          font-weight: 500;
+          line-height: 1.15;
           color: var(--text-primary);
-          margin-bottom: 1rem;
-          letter-spacing: -0.02em;
+          margin-bottom: 0.8rem;
+        }
+        .project-subtitle {
+          font-size: 1.5rem;
+          color: var(--text-muted);
         }
         .project-desc {
-          font-size: 1.45rem;
+          font-size: 1.6rem;
           color: var(--text-secondary);
-          line-height: 1.6;
-          margin-bottom: 1.8rem;
-          flex: 1;
+          line-height: 1.7;
+          max-width: 62ch;
+          margin-bottom: 1.4rem;
         }
-        .project-tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.6rem;
+        .project-stack {
+          font-size: 1.35rem;
+          color: var(--text-muted);
+          line-height: 1.6;
           margin-bottom: 2.4rem;
         }
         .project-actions {
           display: flex;
-          gap: 0.8rem;
           flex-wrap: wrap;
+          gap: 1rem;
         }
-        @media (max-width: 480px) {
-          .projects-grid {
+        @media (max-width: 860px) {
+          .project-body {
             grid-template-columns: 1fr;
+            gap: 1.8rem;
+          }
+          .project-title {
+            font-size: 2.6rem;
+          }
+          .projects-list {
+            gap: 5.6rem;
           }
         }
       `}</style>

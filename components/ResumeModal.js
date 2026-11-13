@@ -1,7 +1,30 @@
 import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ResumeModal({ isOpen, onClose }) {
+  const router = useRouter();
+
+  // Close the resume, then take the visitor to the contact form.
+  const goToContact = () => {
+    onClose();
+    if (router.pathname !== '/') {
+      router.push('/#contact');
+      return;
+    }
+    // wait for the modal to unmount and the page to be scrollable again
+    setTimeout(() => {
+      const el = document.getElementById('contact');
+      if (!el) return;
+      if (window.__lenis) {
+        window.__lenis.scrollTo(el);
+      } else {
+        el.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }
+      window.history.replaceState(null, '', '#contact');
+    }, 350);
+  };
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
@@ -33,6 +56,7 @@ export default function ResumeModal({ isOpen, onClose }) {
         >
           <motion.div
             className="modal-content bento-card"
+            data-lenis-prevent
             onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, scale: 0.94, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -41,7 +65,6 @@ export default function ResumeModal({ isOpen, onClose }) {
           >
             <div className="modal-header">
               <div>
-                <span className="section-tag">Resume / CV</span>
                 <h2 className="modal-title">CHIRAG TANK</h2>
                 <p className="modal-subtitle">
                   Full Stack Developer &bull; Rajasthan, India &bull; Open to remote work and relocation
@@ -212,14 +235,12 @@ export default function ResumeModal({ isOpen, onClose }) {
         </div>
 
         <div className="modal-footer">
+          <button type="button" onClick={goToContact} className="btn btn-secondary btn-sm">
+            Get in touch
+          </button>
           <a
-            href="mailto:chiragtank1971@gmail.com?subject=Job%20Opportunity%20-%20Chirag%20Tank"
-            className="btn btn-secondary btn-sm"
-          >
-            Get in Touch
-          </a>
-          <button
-            onClick={() => window.print()}
+            href="/assets/Chirag_Tank_Resume.pdf"
+            download="Chirag_Tank_Resume.pdf"
             className="btn btn-primary btn-sm"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -227,8 +248,8 @@ export default function ResumeModal({ isOpen, onClose }) {
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
             </svg>
-            Print / Save PDF
-          </button>
+            Download PDF
+          </a>
         </div>
       </motion.div>
 
@@ -266,8 +287,9 @@ export default function ResumeModal({ isOpen, onClose }) {
           border-bottom: 1px solid var(--border-subtle);
         }
         .modal-title {
-          font-size: 2.8rem;
-          font-weight: 800;
+          font-family: var(--font-display);
+          font-size: 3.6rem;
+          font-weight: 500;
           letter-spacing: -0.02em;
           color: var(--text-primary);
           margin: 0.8rem 0 0.4rem;
@@ -311,7 +333,7 @@ export default function ResumeModal({ isOpen, onClose }) {
         .modal-close:hover {
           color: var(--text-primary);
           border-color: var(--accent-primary);
-          background: rgba(99, 102, 241, 0.1);
+          background: transparent;
         }
         .modal-body {
           display: flex;
@@ -319,14 +341,13 @@ export default function ResumeModal({ isOpen, onClose }) {
           gap: 2.8rem;
         }
         .resume-section-title {
-          font-size: 1.55rem;
-          font-weight: 700;
-          color: var(--accent-primary);
+          font-family: var(--font-display);
+          font-size: 2.2rem;
+          font-weight: 500;
+          color: var(--text-primary);
           margin-bottom: 1rem;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          border-bottom: 1px solid rgba(99, 102, 241, 0.15);
-          padding-bottom: 0.4rem;
+          border-bottom: 1px solid var(--border-subtle);
+          padding-bottom: 0.6rem;
         }
         .resume-text {
           font-size: 1.45rem;
@@ -365,12 +386,10 @@ export default function ResumeModal({ isOpen, onClose }) {
         .exp-date {
           font-size: 1.3rem;
           color: var(--text-muted);
-          font-family: 'JetBrains Mono', monospace;
         }
         .exp-tags {
           font-size: 1.3rem;
-          color: var(--accent-secondary);
-          font-family: 'JetBrains Mono', monospace;
+          color: var(--text-muted);
         }
         .exp-school {
           font-size: 1.4rem;
